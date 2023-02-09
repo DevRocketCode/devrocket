@@ -5,6 +5,8 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import PostList from "../components/post-list"
 
 const skills = [
   'TypeScript',
@@ -123,43 +125,7 @@ const BlogIndex = ({ data, location }) => {
         </section>
 
         {/* blog post list */}
-        <div id="posts" className="section-padding">
-          <div className="content-container">
-            <h2 class="section-title">What's New</h2>
-              <ol style={{ listStyle: `none` }}>
-                {posts.map(post => {
-                  const title = post.frontmatter.title || post.fields.slug
-
-                  return (
-                    <li key={post.fields.slug}>
-                      <article
-                        className="post-list-item"
-                        itemScope
-                        itemType="http://schema.org/Article"
-                      >
-                        <header>
-                          <h2>
-                            <Link to={post.fields.slug} itemProp="url">
-                              <span itemProp="headline">{title}</span>
-                            </Link>
-                          </h2>
-                          <small>{post.frontmatter.date}</small>
-                        </header>
-                        <section>
-                          <p
-                            dangerouslySetInnerHTML={{
-                              __html: post.frontmatter.description || post.excerpt,
-                            }}
-                            itemProp="description"
-                          />
-                        </section>
-                      </article>
-                    </li>
-                  )
-                })}
-              </ol>
-            </div>
-        </div>
+        <PostList posts={posts} />
 
         {/* services section */}
         <section id="services" className="services section-padding content-container">
@@ -382,6 +348,11 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 150, height: 100)
+            }
+          }
         }
       }
     }

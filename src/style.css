@@ -824,14 +824,15 @@ a:hover {
   font-size: 4rem;
 }
 
+.home-container #posts {
+  font-size: 1.2rem;
+}
+
 .blog-post h2 {
-  font-size: 3rem;
-  padding-bottom: .5rem;
-  border-bottom: 2px solid #ddd;
-}
-.blog-post h3 {
   font-size: 2rem;
+  padding-bottom: .5rem;
 }
+
 .blog-post h4 {
   font-size: 1.5rem;
 }
