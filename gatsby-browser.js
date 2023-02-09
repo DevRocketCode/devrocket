@@ -3,6 +3,8 @@ import "@fontsource/montserrat/variable.css"
 import "@fontsource/merriweather"
 // normalize CSS across browsers
 import "./src/normalize.css"
+// tailwind
+import "./src/tailwind.css"
 // custom CSS styles
 import "./src/style.css"
 
