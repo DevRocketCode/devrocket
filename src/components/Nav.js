@@ -1,11 +1,9 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-
-const { useState } = React;
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'What I Do', href: '/#services' },
@@ -19,29 +17,7 @@ function classNames(...classes) {
 }
 
 export const Nav = () => {
-  const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
 
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-          social {
-            twitter
-          }
-        }
-      }
-    }
-  `)
-
-
-
-  // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
   return <Disclosure as="nav" id="navbar" className="bg-gray-800">
   {({ open }) => (
     <>

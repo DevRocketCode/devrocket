@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 
 export const Footer = () => {
   return <footer class="footer-area section-padding">

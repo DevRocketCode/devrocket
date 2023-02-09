@@ -828,6 +828,10 @@ a:hover {
   font-size: 1.2rem;
 }
 
+#posts li {
+  list-style: none;
+}
+
 .blog-post h2 {
   font-size: 2rem;
   padding-bottom: .5rem;
