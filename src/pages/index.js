@@ -105,7 +105,6 @@ const BlogIndex = ({ data, location }) => {
                       <li><span className="pro-title"> Name </span> <span className="pro-detail">Preston Wallace</span></li>
                       <li><span className="pro-title"> Location </span> <span className="pro-detail">San Luis Obispo, CA</span></li>
                       <li><span className="pro-title"> e-mail </span> <span className="pro-detail">wallace.preston@gmail.com</span></li>
-                      <li><span className="pro-title"> Phone </span> <span className="pro-detail">805 286 0588</span></li>
                       
                     </ul>
                   </div>
