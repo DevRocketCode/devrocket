@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
 import PostList from "../components/post-list"
+import Testimonial from "../components/Testimonial"
 
 const testimonials = [
   {
@@ -95,21 +96,7 @@ const BlogIndex = ({ data, location }) => {
         <section id="testimonials" className="section-padding content-container">
           <div className="testimonials-container">
             {testimonials.map((testimonial, index) => (
-              <div className="testimonials-item hover-grow wow fadeInUp" data-wow-delay="0.3s">
-
-                <div className="testimonials-meta">
-                  <div className="testimonials-image">
-                    <img className="testimonials-image" src={testimonial.image} alt={testimonial.name} />
-                  </div>
-                  <div className="testimonials-info">
-                    <h3>{testimonial.name}</h3>
-                    <a href={`https://www.linkedin.com/in/${testimonial.social}`} target="_blank" rel="noreferrer">{testimonial.social}</a>
-                  </div>
-                </div>
-                <div className="testimonials-content">
-                  <p>{testimonial.quote}</p>
-                </div>
-              </div>
+              <Testimonial key={index} testimonial={testimonial} />
             ))}
           </div>
         </section>
