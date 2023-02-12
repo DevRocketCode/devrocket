@@ -101,51 +101,74 @@ const BlogIndex = ({ data, location }) => {
           </div>
         </section>
 
-        {/* services section */}
-        <section id="services" className="services section-padding content-container">
-          <h2 className="section-title  wow flipInX" data-wow-delay="0.4s">What I do</h2>
-          <div>
-            <div className="services-row">
-              
-                <div className="services-item hover-grow" data-wow-delay="0.3s">
-                  <div className="icon">
-                    <i className="icon-grid"></i>
-                  </div>
-                  <div className="services-content">
-                    <h3>Front-end Development</h3>
-                    <p>I work mainly with TypeScript, React, and Apollo, creating Single Page Applications.</p>
-                  </div>
-                </div>
-              
-                <div className="services-item hover-grow" data-wow-delay="0.6s">
-                  <div className="icon">
-                    <i className="icon-layers"></i>
-                  </div>
-                  <div className="services-content">
-                    <h3>Back-End Development</h3>
-                    <p>Using TypeScript, Node.js, Express, and PostgreSQL, I build REST and GraphQL APIs.</p>
-                  </div>
-                </div>
-              
-                <div className="services-item hover-grow" data-wow-delay="0.9s">
-                  <div className="icon">
-                    <i className="icon-briefcase"></i>
-                  </div>
-                  <div className="services-content">
-                    <h3>Design</h3>
-                    <p>I create using Figma and Photoshop. I love working with CSS3, SASS, TailwindCSS, and Styled Components.</p>
-                  </div>
-                </div>
-              
-                <div className="services-item hover-grow" data-wow-delay="1.2s">
-                  <div className="icon">
-                    <i className="icon-bubbles"></i>
-                  </div>
-                  <div className="services-content">
-                    <h3>Agile Development</h3>
-                    <p>I work iteratively and efficiently. I believe we can achieve so much more as a team.</p>
-                  </div>
-                </div>
+        {/* why section */}
+        <section id="why" className="section-padding content-container">
+          <h2 className="section-title  wow flipInX" data-wow-delay="0.4s">why code with me</h2>
+          <div className="why-container">
+            <div className="why-item hover-grow" data-wow-delay="0.3s">
+              <div className="icon">
+                <i className="icon-grid"></i>
+              </div>
+              <div className="why-content">
+                <h3>Easy to Follow</h3>
+                <h4>All of the learning. None of the angst.</h4>
+                <p>Say goodbye to confusing lessons and hello to a simple and beginner-friendly experience with Preston's online coding courses.</p>
+              </div>
+            </div>
+          
+            <div className="why-item hover-grow" data-wow-delay="0.6s">
+              <div className="icon">
+                <i className="icon-layers"></i>
+              </div>
+              <div className="why-content">
+                <h3>Fast-track lessons</h3>
+                <h4>Accelerate Your Learning</h4>
+                <p>Join the Coding Revolution!  Get ahead of the game with Preston's clear and concise lessons that leave out the fluff and get straight to the point.</p>
+              </div>
+            </div>
+          
+            <div className="why-item hover-grow" data-wow-delay="0.9s">
+              <div className="icon">
+                <i className="icon-briefcase"></i>
+              </div>
+              <div className="why-content">
+                <h3>Compassionate Teacher</h3>
+                <h4>Learn coding with a passion, don't hate it with one.</h4>
+                <p>Get inspired and motivated with Preston's passionate teaching style and fun, friendly voice that makes coding a fun and engaging experience.</p>
+              </div>
+            </div>
+          
+            <div className="why-item hover-grow" data-wow-delay="1.2s">
+              <div className="icon">
+                <i className="icon-bubbles"></i>
+              </div>
+              <div className="why-content">
+                <h3>Master the Mindset</h3>
+                <h4>Unlock Your Inner Coding Genius"</h4>
+                <p>Learn from a true expert with Preston's years of experience in the industry and gain valuable tips and tricks that will help you code with confidence.</p>
+              </div>
+            </div>
+          
+            <div className="why-item hover-grow" data-wow-delay="1.2s">
+              <div className="icon">
+                <i className="icon-bubbles"></i>
+              </div>
+              <div className="why-content">
+                <h3>Experience World-Class Quality Videos!</h3>
+                <h4>Exciting lessons that are fun and Engaging</h4>
+                <p>Get the best quality education with Preston's attention to detail and obsession with the quality of his videos, complete with beautiful graphics, slides, and animations.</p>
+              </div>
+            </div>
+          
+            <div className="why-item hover-grow" data-wow-delay="1.2s">
+              <div className="icon">
+                <i className="icon-bubbles"></i>
+              </div>
+              <div className="why-content">
+                <h3>Prepare for Coding Interviews</h3>
+                <h4>Boost Your Career Options with a Job-Ready Education!</h4>
+                <p>Get ahead of the competition with Preston's in-depth and comprehensive courses that are packed with real-world examples and exercises to prepare you for the job.</p>
+              </div>
             </div>
           </div>
         </section>
