@@ -6,10 +6,10 @@ import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'What I Do', href: '/#services' },
+  { name: 'What I Do', href: '/' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Experience', href: '/#experience' },
-  { name: 'About', href: '/#about' },
+  { name: 'Experience', href: '/about/#experience' },
+  { name: 'About', href: '/about' },
 ]
 
 function classNames(...classes) {
