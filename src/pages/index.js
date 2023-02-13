@@ -44,7 +44,19 @@ const testimonials = [
     image: 'https://media.licdn.com/dms/image/C5603AQHZd2F__7gFVQ/profile-displayphoto-shrink_100_100/0/1593070143668?e=1681948800&v=beta&t=tCqG6t5aQ85QueVwh-mD2iVe8TMDUuqTGUZqQXoYxdc',
     social: 'yahya-hafez',
     quote: "Preston's impressive experience and skill as a developer was consistently highlighted through the deep knowledge of web development he shared."
-  }
+  },
+  {
+    name: 'Riley Smith',
+    image: 'https://media.licdn.com/dms/image/C5603AQHmlM_z2WQweQ/profile-displayphoto-shrink_200_200/0/1560034191068?e=1681948800&v=beta&t=sprncOx7Qh9kvl75sBXhs340Z2iMvp-olt8721Dn2ZM',
+    social: 'rileysheldonsmith',
+    quote: "Preston is a thoughtful instructor who strives to see his students succeed. He is always happy to work with students at their pace, and help them gain thorough understanding of the curriculum."
+  },
+  {
+    name: 'Tilly Wright',
+    image: 'https://media.licdn.com/dms/image/C5603AQG6G_vE0Hc8-g/profile-displayphoto-shrink_200_200/0/1608654958930?e=1681948800&v=beta&t=rg4jdOcBZieFHXIeAk37VBLVxtwehz05kW8-nPZroug',
+    social: 'tillywright',
+    quote: "Preston's instruction and lessons were really easy to follow as I was building JS projects."
+  },
 ];
 
 
