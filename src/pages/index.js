@@ -4,8 +4,9 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
-import PostList from "../components/post-list"
+import PostList from "../components/PostList"
 import Testimonial from "../components/Testimonial"
+import WhyItem from "../components/WhyItem"
 
 const testimonials = [
   {
@@ -44,7 +45,54 @@ const testimonials = [
     social: 'yahya-hafez',
     quote: "Preston's impressive experience and skill as a developer was consistently highlighted through the deep knowledge of web development he shared."
   }
-]
+];
+
+
+// icons come from simple-line-icons https://simplelineicons.github.io/
+const whyItems = [
+  {
+    title: 'Easy to Follow',
+    subtitle: 'All of the learning. None of the angst.',  
+    description: "Say goodbye to confusing lessons and hello to a simple and beginner-friendly experience with Preston's online coding courses.",
+    icon: 'directions',
+    borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70% ',
+  },
+  {
+    borderRadius: '60% 40% 34% 66% / 30% 56% 44% 70%',
+    title: 'Fast-track lessons',
+    subtitle: 'Accelerate Your Learning',
+    description: "Join the Coding Revolution!  Get ahead of the game with Preston's clear and concise lessons that leave out the fluff and get straight to the point.",
+    icon: 'rocket',
+  },
+  {
+    title: 'Compassionate Teacher',
+    subtitle: "Learn coding with a passion, don't hate it with one.",
+    description: "Get inspired and motivated with Preston's passionate teaching style and fun, friendly voice that makes coding a fun and engaging experience.",
+    icon: 'heart',
+    borderRadius: '30% 70% 43% 57% / 81% 30% 70% 19%',
+  },
+  {
+    title: 'Master the Mindset',
+    subtitle: 'Unlock Your Inner Coding Genius',
+    description: "Learn from a true expert with Preston's years of experience in the industry and gain valuable tips and tricks that will help you code with confidence.",
+    icon: 'bulb',
+    borderRadius: '64% 36% 43% 57% / 53% 30% 70% 47%',
+  },
+  {
+    title: 'World-Class Quality Videos',
+    subtitle: 'Exciting lessons that are fun and Engaging',
+    description: "Get the best quality education with Preston's attention to detail and obsession with the quality of his videos, complete with beautiful graphics, slides, and animations.",
+    icon: 'camrecorder',
+    borderRadius: '36% 64% 43% 57% / 53% 79% 21% 47%',
+  },
+  {
+    title: 'Prepare for Coding Interviews',
+    subtitle: 'Boost Your Career Options with a Job-Ready Education',
+    description: "Get ahead of the competition with Preston's in-depth and comprehensive courses that are packed with real-world examples and exercises to prepare you for the job.",
+    icon: 'briefcase',
+    borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+  },
+];
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -87,17 +135,20 @@ const BlogIndex = ({ data, location }) => {
             <div className="text-3xl font-extrabold text-gray-600">Hello! I'm Preston</div>
             <p className="section-padding text-xl">I empower new and seasoned engineers to level-up their skills, <br/> get that promotion, and ultimately crush it in life.</p>
             <div className="card wow fadeInLeft video-container" data-wow-delay="0.3s">
-              <iframe className="youtube-video" src="https://www.youtube.com/embed/4SiqWAvIjaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe className="youtube-video" src="https://www.youtube.com/embed/4SiqWAvIjaw?&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </div>
         </section>
 
         {/* testimonials section */}
-        <section id="testimonials" className="section-padding content-container">
-          <div className="testimonials-container">
-            {testimonials.map((testimonial, index) => (
-              <Testimonial key={index} testimonial={testimonial} />
-            ))}
+        <section id="testimonials" className="section-padding">
+          <div className="content-container">
+
+            <div className="testimonials-container">
+              {testimonials.map((testimonial, index) => (
+                <Testimonial key={index} testimonial={testimonial} />
+              ))}
+            </div>
           </div>
         </section>
 
@@ -105,71 +156,9 @@ const BlogIndex = ({ data, location }) => {
         <section id="why" className="section-padding content-container">
           <h2 className="section-title  wow flipInX" data-wow-delay="0.4s">why code with me</h2>
           <div className="why-container">
-            <div className="why-item hover-grow" data-wow-delay="0.3s">
-              <div className="icon">
-                <i className="icon-grid"></i>
-              </div>
-              <div className="why-content">
-                <h3>Easy to Follow</h3>
-                <h4>All of the learning. None of the angst.</h4>
-                <p>Say goodbye to confusing lessons and hello to a simple and beginner-friendly experience with Preston's online coding courses.</p>
-              </div>
-            </div>
-          
-            <div className="why-item hover-grow" data-wow-delay="0.6s">
-              <div className="icon">
-                <i className="icon-layers"></i>
-              </div>
-              <div className="why-content">
-                <h3>Fast-track lessons</h3>
-                <h4>Accelerate Your Learning</h4>
-                <p>Join the Coding Revolution!  Get ahead of the game with Preston's clear and concise lessons that leave out the fluff and get straight to the point.</p>
-              </div>
-            </div>
-          
-            <div className="why-item hover-grow" data-wow-delay="0.9s">
-              <div className="icon">
-                <i className="icon-briefcase"></i>
-              </div>
-              <div className="why-content">
-                <h3>Compassionate Teacher</h3>
-                <h4>Learn coding with a passion, don't hate it with one.</h4>
-                <p>Get inspired and motivated with Preston's passionate teaching style and fun, friendly voice that makes coding a fun and engaging experience.</p>
-              </div>
-            </div>
-          
-            <div className="why-item hover-grow" data-wow-delay="1.2s">
-              <div className="icon">
-                <i className="icon-bubbles"></i>
-              </div>
-              <div className="why-content">
-                <h3>Master the Mindset</h3>
-                <h4>Unlock Your Inner Coding Genius"</h4>
-                <p>Learn from a true expert with Preston's years of experience in the industry and gain valuable tips and tricks that will help you code with confidence.</p>
-              </div>
-            </div>
-          
-            <div className="why-item hover-grow" data-wow-delay="1.2s">
-              <div className="icon">
-                <i className="icon-bubbles"></i>
-              </div>
-              <div className="why-content">
-                <h3>Experience World-Class Quality Videos!</h3>
-                <h4>Exciting lessons that are fun and Engaging</h4>
-                <p>Get the best quality education with Preston's attention to detail and obsession with the quality of his videos, complete with beautiful graphics, slides, and animations.</p>
-              </div>
-            </div>
-          
-            <div className="why-item hover-grow" data-wow-delay="1.2s">
-              <div className="icon">
-                <i className="icon-bubbles"></i>
-              </div>
-              <div className="why-content">
-                <h3>Prepare for Coding Interviews</h3>
-                <h4>Boost Your Career Options with a Job-Ready Education!</h4>
-                <p>Get ahead of the competition with Preston's in-depth and comprehensive courses that are packed with real-world examples and exercises to prepare you for the job.</p>
-              </div>
-            </div>
+            {whyItems.map((why, index) => (
+              <WhyItem key={index} {...why} />
+            ))}
           </div>
         </section>
 

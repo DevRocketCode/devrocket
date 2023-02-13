@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
-import PostList from "../components/post-list"
+import PostList from "../components/PostList"
 
 const skills = [
   'TypeScript',

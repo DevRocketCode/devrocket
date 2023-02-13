@@ -801,6 +801,74 @@ a:hover {
 
 
 
+
+.why-item h3 {
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+.why-item h4 {
+  color: #00b4d9;
+}
+.services-row {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.why-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.why-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-item > * {
+  margin: 1rem;
+}
+
+.why-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.why-item .why-content {
+  margin: 0 1rem;
+}
+
+.why-item .icon {
+  background: #fff;
+  padding: 48px 20px;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 20%);
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-item .icon i {
+  font-size: 5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  color: #00b4d9;
+}
+
 @media (max-width: 1024px) {
   .hero-content {
     font-size: 1.5em;
@@ -816,6 +884,20 @@ a:hover {
 
   #hero-area {
     height: 75vh;
+  }
+
+  .why-container {
+    font-size: 1.3rem;
+  }
+
+
+  .why-item .icon {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .why-item .icon i {
+    font-size: 4rem;
   }
 }
 
@@ -851,14 +933,20 @@ a:hover {
     height: auto;
     margin: 1rem 0;
   }
-}
 
-.services-row {
-  flex-wrap: wrap;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  .why-container {
+    font-size: 1.1rem;
+  }
+
+
+  .why-item .icon {
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .why-item .icon i {
+    font-size: 3rem;
+  }
 }
 
 
