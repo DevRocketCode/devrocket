@@ -25,6 +25,13 @@ module.exports = {
     'gatsby-plugin-postcss',
     `gatsby-plugin-image`,
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: 'https://prestonwallace.us18.list-manage.com/subscribe/post?u=46ef56ab15bcebc4a37198605&amp;id=fffd46c78d&amp;f_id=00b311e7f0', // string; add your MC list endpoint here;
+          timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

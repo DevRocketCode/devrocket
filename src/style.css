@@ -523,7 +523,118 @@ a:hover {
   font-size: 2em;
 }
 
+#mc_embed_signup{
+  background:#fff;
+  clear:left;
+  font:14px Helvetica,Arial,sans-serif;
+  width:600px;
+}
 
+.signup-area-bg {
+  background: url(./img/hero-area.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background color black but low transparency */
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+#signup-form > * {
+  margin: 1rem 0;
+}
+
+
+#signup-form .form-group {
+  width: 100%;
+}
+
+#signup-form .form-group > * {
+  padding: 0 1rem;
+}
+
+#signup-area {
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  /* height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#signup-area input {
+  color: black;
+  height: 2rem;
+}
+
+#signup-area input, #signup-area button {
+  min-width: 20rem;
+}
+
+#signup-area .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #0c0808;
+  opacity: 0.6;
+}
+
+#signup-area .contents {
+  padding: 175px 0px 120px;
+}
+
+#signup-area .contents h5 {
+  font-size: 2.5rem;
+}
+
+#signup-area .hero-title {
+  font-family: 'Bodoni Moda', serif;
+  color: #fff;
+  font-size: 3em;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#signup-area .contents p {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 25px;
+}
+
+#signup-area .contents .btn {
+  margin: 25px 0px;
+  text-transform: uppercase;
+}
+
+#signup-area .banner_bottom_btn {
+  margin-top: 40px;
+}
+
+#signup-area .banner_bottom_btn i {
+  color: #fff;
+  font-size: 48px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+#signup-area .banner_bottom_btn i:hover {
+  color: #ddd;
+}
 
 .with-rules {
   display: inline-block;
@@ -799,7 +910,9 @@ a:hover {
   margin: 0 0.25rem;
 }
 
-
+.get-free {
+  text-align: center;
+}
 
 
 .why-item h3 {

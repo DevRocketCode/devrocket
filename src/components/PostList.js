@@ -8,7 +8,7 @@ const PostList = ({ posts }) => {
   return (
     <div id="posts" className="section-padding">
       <div className="content-container">
-        <h2 class="section-title">What's New</h2>
+        <h2 className="section-title">What's New</h2>
           <ol style={{ listStyle: `none` }}>
             {posts.map(post => {
               const title = post.frontmatter.title || post.fields.slug

@@ -9,12 +9,9 @@ const navigation = [
   { name: 'What I Do', href: '/' },
   { name: 'Blog', href: '/blog' },
   { name: 'Experience', href: '/about/#experience' },
+  { name: 'FREE Guide', href: '/typescript-essentials-free-guide', className: 'block px-3 py-2 rounded-md text-base bg-cyan-600 hover:bg-cyan-500 text-white font-bold' },
   { name: 'About', href: '/about' },
 ]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export const Nav = () => {
 
@@ -59,11 +56,7 @@ export const Nav = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'px-3 py-2 rounded-md text-md font-bold'
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
+                    className={item.className ? item.className : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-bold'}
                   >
                     {item.name}
                   </a>
@@ -81,11 +74,7 @@ export const Nav = () => {
               key={item.name}
               as="a"
               href={item.href}
-              className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'block px-3 py-2 rounded-md text-base font-medium'
-              )}
-              aria-current={item.current ? 'page' : undefined}
+              className={item.className ? item.className : 'text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'}
             >
               {item.name}
             </Disclosure.Button>

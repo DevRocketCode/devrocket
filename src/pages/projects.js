@@ -70,7 +70,7 @@ const Projects = ({ data, location }) => {
 
     <div className="section-padding blog-post">
       <div className="content-container">
-          <h1 class="section-title">Projects</h1>
+          <h1 className="section-title">Projects</h1>
           <div className="services-row">
           {
             projects.map((project, i) => (

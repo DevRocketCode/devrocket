@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -7,6 +7,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import PostList from "../components/PostList"
 import Testimonial from "../components/Testimonial"
 import WhyItem from "../components/WhyItem"
+import GetFree from "../components/GetFree"
 
 const testimonials = [
   {
@@ -141,6 +142,9 @@ const BlogIndex = ({ data, location }) => {
           </div>
         </div>
 
+        {/* free download section */}
+        <GetFree />
+
         {/* about section */}
         <section id="about" className="section-padding">
           <div id="hello-area" className="content-container">
@@ -165,12 +169,14 @@ const BlogIndex = ({ data, location }) => {
         </section>
 
         {/* why section */}
-        <section id="why" className="section-padding content-container">
-          <h2 className="section-title  wow flipInX" data-wow-delay="0.4s">why code with me</h2>
-          <div className="why-container">
-            {whyItems.map((why, index) => (
-              <WhyItem key={index} {...why} />
-            ))}
+        <section id="why" className="section-padding">
+          <div className="content-container">
+            <h2 className="section-title  wow flipInX" data-wow-delay="0.4s">why code with me</h2>
+            <div className="why-container">
+              {whyItems.map((why, index) => (
+                <WhyItem key={index} {...why} />
+              ))}
+            </div>
           </div>
         </section>
 

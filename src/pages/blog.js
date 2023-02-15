@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostList from "../components/PostList"
+import GetFree from "../components/GetFree"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -31,7 +32,13 @@ const BlogIndex = ({ data, location }) => {
     <div className="section-padding blog-post">
       <PostList posts={posts} />
       <div className="content-container">
+
+        {/* free download section */}
+        <GetFree />
+
+        {/* bio section */}
         <Bio />
+        
       </div>
     </div>
 

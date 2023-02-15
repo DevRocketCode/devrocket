@@ -1,10 +1,9 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
-import PostList from "../components/PostList"
 
 const skills = [
   'TypeScript',
@@ -44,7 +43,6 @@ const skills = [
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
 
   return (
     <Layout location={location} title={siteTitle} addMargin={false} hideTitle>
@@ -83,7 +81,7 @@ const BlogIndex = ({ data, location }) => {
                     <a href="/assets/img/about/preston-wallace-software-engineer.pdf"><i className="icon-paper-clip"></i> Download Resume</a>
                   </button>
                   <button className="button button-danger button-medium hover-grow">
-                    <a href="#contact" ><i className="icon-speech"></i> Contact Me</a>
+                    <a href="https://www.linkedin.com/in/prestonwallace/" ><i className="icon-speech"></i> Connect with Me</a>
                   </button>
                   
                 </div>
@@ -268,7 +266,7 @@ const BlogIndex = ({ data, location }) => {
           <h4 className="section-subtitle">
             These are just a few!
           </h4>
-          <div class="skills-container">
+          <div className="skills-container">
             {
               skills.map((skill, index) => {
                 return (
