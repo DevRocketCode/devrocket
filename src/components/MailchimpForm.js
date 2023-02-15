@@ -39,7 +39,7 @@ const MailchimpForm = ({ gift = 'Free Guide' }) => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <button type="submit" className="button button-info button-medium hover-grow">Subscribe</button>
+      <button type="submit" className="button button-info button-medium hover-grow">Get the FREE Guide</button>
     </form>
   )
 }

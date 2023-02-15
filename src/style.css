@@ -572,7 +572,8 @@ a:hover {
 
 #signup-area input {
   color: black;
-  height: 2rem;
+  font-size: 1rem;
+  height: 3rem;
 }
 
 #signup-area input, #signup-area button {
@@ -1217,4 +1218,11 @@ a:hover {
 
 #navbar a:hover {
   text-decoration: none;
+}
+
+.footer-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

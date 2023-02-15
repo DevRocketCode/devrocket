@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
+import resumePDF from '../img/about/preston-wallace-software-engineer.pdf'
 
 const skills = [
   'TypeScript',
@@ -78,7 +79,7 @@ const BlogIndex = ({ data, location }) => {
                     </ul>
                   </div>
                   <button className="button button-info button-medium hover-grow">
-                    <a href="/assets/img/about/preston-wallace-software-engineer.pdf"><i className="icon-paper-clip"></i> Download Resume</a>
+                    <a href={resumePDF}><i className="icon-paper-clip"></i> Download Resume</a>
                   </button>
                   <button className="button button-danger button-medium hover-grow">
                     <a href="https://www.linkedin.com/in/prestonwallace/" ><i className="icon-speech"></i> Connect with Me</a>
