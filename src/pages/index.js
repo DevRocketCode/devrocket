@@ -189,7 +189,7 @@ export default BlogIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="TypeScript Architecture" />
+export const Head = () => <Seo title="Write Code with Confidence" />
 
 export const pageQuery = graphql`
   {
