@@ -66,7 +66,7 @@ const whyItems = [
   {
     title: 'Easy to Follow',
     subtitle: 'All of the learning. None of the angst.',  
-    description: "Say goodbye to confusing lessons and hello to a simple and beginner-friendly experience with Preston's online coding courses.",
+    description: "Say goodbye to confusing lessons and hello to a simple and beginner-friendly experience with Preston's online coding videos.",
     icon: 'directions',
     borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70% ',
   },
@@ -101,7 +101,7 @@ const whyItems = [
   {
     title: 'Prepare for Coding Interviews',
     subtitle: 'Boost Your Career Options with a Job-Ready Education',
-    description: "Get ahead of the competition with Preston's in-depth and comprehensive courses that are packed with real-world examples and exercises to prepare you for the job.",
+    description: "Get ahead of the competition with Preston's in-depth and comprehensive video lessons that are packed with real-world examples and exercises to prepare you for the job.",
     icon: 'briefcase',
     borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
   },
@@ -151,7 +151,7 @@ const BlogIndex = ({ data, location }) => {
             <div className="text-3xl font-extrabold text-gray-600">Hello! I'm Preston</div>
             <p className="section-padding text-xl">I empower new and seasoned engineers to level-up their skills, <br/> get that promotion, and ultimately crush it in life.</p>
             <div className="card wow fadeInLeft video-container" data-wow-delay="0.3s">
-              <iframe className="youtube-video" src="https://www.youtube.com/embed/4SiqWAvIjaw?&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe className="youtube-video" src="https://www.youtube.com/embed/K0Q48l0060I?&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
           </div>
         </section>
