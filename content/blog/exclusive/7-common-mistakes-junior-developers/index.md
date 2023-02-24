@@ -1,7 +1,7 @@
 ---
 title: 7 Common Mistakes Junior Developers Make
-description: "...and How to Avoid Them"
-featuredImage: header.jpg
+description: ...and How to Avoid Them
+youTubeVideo: https://www.youtube.com/embed/K0Q48l0060I?&controls=0
 type: exclusive
 ---
 

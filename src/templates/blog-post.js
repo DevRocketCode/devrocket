@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import GetFree from "../components/GetFree"
+import YouTubeVideo from "../components/YouTubeVideo"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post },
@@ -14,6 +15,7 @@ const BlogPostTemplate = ({
   const siteTitle = site.siteMetadata?.title || `Title`
   const featuredImg = getImage(post.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
   const isExclusive = post.frontmatter.type === "exclusive";
+  const youTubeVideo = post.frontmatter.youTubeVideo;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -26,7 +28,13 @@ const BlogPostTemplate = ({
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <h4 itemProp="headline">{post.frontmatter.description}</h4>
           <p className="date">{post.frontmatter.date}</p>
-          <GatsbyImage image={featuredImg} className="my-5" />
+          {
+            featuredImg && <GatsbyImage image={featuredImg} className="my-5" />
+          }
+          {
+            youTubeVideo && <YouTubeVideo src={youTubeVideo} />
+          }
+          <br/>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -114,6 +122,7 @@ export const pageQuery = graphql`
           }
         }
         type
+        youTubeVideo
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
