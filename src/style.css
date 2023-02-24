@@ -1201,6 +1201,11 @@ a:hover {
   list-style-type: circle;
 }
 
+.blog-post-nav li {
+  list-style-type: none;
+  margin-top: 1rem;
+}
+
 .blog-post ul {
   margin-left: 1rem;
 }
