@@ -8,6 +8,7 @@ import PostList from "../components/PostList"
 import Testimonial from "../components/Testimonial"
 import WhyItem from "../components/WhyItem"
 import GetFree from "../components/GetFree"
+import YouTubeVideo from "../components/YouTubeVideo"
 
 const testimonials = [
   {
@@ -150,9 +151,7 @@ const BlogIndex = ({ data, location }) => {
           <div id="hello-area" className="content-container">
             <div className="text-3xl font-extrabold text-gray-600">Hello! I'm Preston</div>
             <p className="section-padding text-xl">I empower new and seasoned engineers to level-up their skills, <br/> get that promotion, and ultimately crush it in life.</p>
-            <div className="card wow fadeInLeft video-container" data-wow-delay="0.3s">
-              <iframe className="youtube-video" src="https://www.youtube.com/embed/K0Q48l0060I?&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
+            <YouTubeVideo src="https://www.youtube.com/embed/K0Q48l0060I?&controls=0" />
           </div>
         </section>
 
