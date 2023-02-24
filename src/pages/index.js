@@ -204,7 +204,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }, filter: { frontmatter: { type: { ne: "exclusive" } } }) {
       nodes {
         excerpt
         fields {
