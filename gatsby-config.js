@@ -69,7 +69,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/exclusive`,
+        path: `${__dirname}/content/blog/exclusive`,
         name: `exclusive`,
       },
     },
