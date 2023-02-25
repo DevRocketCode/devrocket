@@ -93,9 +93,9 @@ const whyItems = [
     borderRadius: '64% 36% 43% 57% / 53% 30% 70% 47%',
   },
   {
-    title: 'World-Class Quality Videos',
+    title: 'Fun Videos',
     subtitle: 'Exciting lessons that are fun and Engaging',
-    description: "Get the best quality education with Preston's attention to detail and obsession with the quality of his videos, complete with beautiful graphics, slides, and animations.",
+    description: "Get excited about coding with Preston's fun and engaging videos that are packed with real-world examples and exercises to help you learn by doing.",
     icon: 'camrecorder',
     borderRadius: '36% 64% 43% 57% / 53% 79% 21% 47%',
   },
