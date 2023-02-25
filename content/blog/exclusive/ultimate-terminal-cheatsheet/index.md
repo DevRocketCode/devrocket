@@ -6,6 +6,13 @@ type: exclusive
 
 Welcome to the Ultimate Terminal Cheatsheet! We know the command line can be intimidating, like trying to navigate a maze blindfolded. But fear not, for this cheatsheet will be your trusty guide, like a GPS for your terminal. From manipulating files to networking to version control, we've got you covered. Let's power up our keyboards and get ready to conquer the command line!
 
+## Get the markdown file for this cheatsheet
+<button class="button button-info button-medium hover-grow">
+<a href="https://gist.github.com/wallacepreston/180194b3799bc936e3a035449b8c06ac">
+  Get the markdown
+</a>
+</button> 👈 Click for the Markdown
+
 ## Basic Terminal Commands
 - Command line
   - See where I am `pwd`
