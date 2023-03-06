@@ -59,6 +59,18 @@ const testimonials = [
     social: 'tillywright',
     quote: "Preston's instruction and lessons were really easy to follow as I was building JS projects."
   },
+  {
+    name: 'Sal Guerrero',
+    image: 'https://media.licdn.com/dms/image/C4E03AQHN3zwV__TInA/profile-displayphoto-shrink_400_400/0/1615440348360?e=1683763200&v=beta&t=yelr1-oXtF4llB9jwlNihDiR4z7tgDQz4-2TqQjbsqk',
+    social: 'sal-guerrero',
+    quote: "Preston helped me understand critical programming concepts and further my programming skills. As a result of his teaching I was able to break into tech and find the career of my dreams.",
+  },
+  {
+    name: 'Bienvenido Rodriguez',
+    image: 'https://media.licdn.com/dms/image/D4E03AQEhKHm19c9rrQ/profile-displayphoto-shrink_100_100/0/1669090489392?e=1683763200&v=beta&t=Or8QQfQc-HVMlGYOcZgji_DfaCtQWvByEUqp_Vy1fxA',
+    social: 'b17z',
+    quote: 'Preston is a gifted Software Engineer and a thought leader in technical education, training, and communication.'
+  }
 ];
 
 
