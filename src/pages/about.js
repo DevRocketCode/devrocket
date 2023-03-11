@@ -223,12 +223,26 @@ const BlogIndex = ({ data, location }) => {
                       <div className="content-text">
                         <h3>LinkedIn Learning</h3>
                         <span>Jun 2022 - Present</span>
-                        <p className="line-text">Studying topics like Cybersecurity, Authentication, Deployment, AWS, and more.</p>
+                        <p className="line-text">Studying topics like TypeScript, Authentication, Deployment, Agile Development and more.</p>
                       </div>
                     </li>
                     <li>
                       <div className="content-text">
-                        <h3>binsec academy</h3>
+                        <h3>AWS</h3>
+                        <span>Sep 2022</span>
+                        <p className="line-text">Learning AWS Cloud Practitioner Essentials, Overview of AWS Cloud, AWS Cloud concepts, AWS services, security, architecture, pricing, and support.</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="content-text">
+                        <h3>Cisco</h3>
+                        <span>Jul 2022</span>
+                        <p className="line-text">Dove deep into Cyber Best Practices, Cybersecurity, Network Vulnerabilities, Privacy And Data Confidentiality, and Threat Detection</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="content-text">
+                        <h3>Binsec Academy</h3>
                         <span>Sep 2020</span>
                         <p className="line-text">Performed a comprehensive secure coding review of an ExpressJS server running on NodeJS. Dove into the depths of the most common security risks for web applications (OWASP Top 10). This course included identifying and fixing multiple vulnerabilities in the web application's source code.</p>
                       </div>
@@ -242,7 +256,7 @@ const BlogIndex = ({ data, location }) => {
                     </li>
                     <li>
                       <div className="content-text">
-                        <h3>GIA (Gemological Institute of America</h3>
+                        <h3>GIA (Gemological Institute of America)</h3>
                         <span>2004 - 2011</span>
                         <p className="line-text">Developed in-depth, hands-on experience with Diamond Grading and the 4Cs (color, clarity, cut and carat weight). Used the GIA Colored Stone Grading System to evaluate gemstone quality. Successfully identified colored gemstones at random, including simulants and treatments. Learned how quality, rarity and color affect value. Determined how market factors affect gem value.</p>
                       </div>
