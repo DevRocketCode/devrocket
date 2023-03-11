@@ -1,9 +1,7 @@
 # prestonwallace.com
 
 ## Deploying
+Locally, run this command
 ```
 npm run deploy
-git add -A
-git commit -m "deploy"
-git push
 ```
