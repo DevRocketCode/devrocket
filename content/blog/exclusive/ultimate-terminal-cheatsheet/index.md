@@ -1,6 +1,7 @@
 ---
 title: The Ultimate Terminal Cheatsheet - Your Key to Command Line Productivity
 description: Master the Terminal and Rule the Command Line Kingdom!
+featuredImage: man-in-front-of-castle.jpg
 type: exclusive
 ---
 
