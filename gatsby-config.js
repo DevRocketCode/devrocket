@@ -166,4 +166,5 @@ module.exports = {
       },
     },
   ],
+  pathPrefix: "/prestonwallace",
 }
