@@ -38,7 +38,7 @@ export const Nav = () => {
                   <StaticImage
                     className="bio-avatar logo-avatar"
                     formats={["auto", "webp", "avif"]}
-                    src="../img/about/headshot.jpg"
+                    src="../img/about/headshot-round.png"
                     width={30}
                     height={30}
                     quality={95}
