@@ -332,8 +332,11 @@ a:focus {
 }
 
 .post-list-item {
-  margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
+  margin: 3rem 1rem;
+}
+
+.post-list-item .row {
+  display: flex;
 }
 
 .post-list-item p {
@@ -513,10 +516,12 @@ a:hover {
 }
 
 .hero-content h2 {
-  font-size: 1.5em;
-  letter-spacing: 1rem;
+  letter-spacing: .5rem;
   text-transform: uppercase;
   font-weight: 700;
+  font-family: 'Bodoni Moda', serif;
+  color: #fff;
+  font-size: 3.5em;
 }
 
 .hero-content h5 {
@@ -598,15 +603,6 @@ a:hover {
   font-size: 2.5rem;
 }
 
-#signup-area .hero-title {
-  font-family: 'Bodoni Moda', serif;
-  color: #fff;
-  font-size: 3em;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
 #signup-area .contents p {
   font-size: 30px;
   color: #fff;
@@ -679,15 +675,6 @@ a:hover {
 
 #hero-area .contents h5 {
   font-size: 2.5rem;
-}
-
-#hero-area .hero-title {
-  font-family: 'Bodoni Moda', serif;
-  color: #fff;
-  font-size: 3em;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
 }
 
 #hero-area .contents p {
@@ -1004,6 +991,9 @@ a:hover {
     font-size: 1.3rem;
   }
 
+  .why-item {
+    margin: 1rem 0;
+  }
 
   .why-item .icon {
     width: 12rem;
@@ -1015,7 +1005,17 @@ a:hover {
   }
 }
 
+/* SMALLEST (mobile) */
 @media (max-width: 768px) {
+  .content-container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2.5em;
+  }
+  
   .hero-content {
     font-size: 1rem;
   }
@@ -1031,7 +1031,7 @@ a:hover {
   }
 
   #hero-area {
-    height: 50vh;
+    height: 70vh;
   }
 
   .hero-avatar {
@@ -1049,18 +1049,31 @@ a:hover {
   }
 
   .why-container {
-    font-size: 1.1rem;
+    font-size: .9rem;
   }
 
-
   .why-item .icon {
-    width: 9rem;
-    height: 9rem;
+    width: 6rem;
+    height: 6rem;
   }
 
   .why-item .icon i {
     font-size: 3rem;
   }
+
+  .with-rules::before,
+  .with-rules::after {
+      width: 3rem;
+  }
+
+  .post-list-item .row {
+    display: block;
+  }
+
+  .post-list-item-img {
+    margin-left: 1.3rem;
+  }
+
 }
 
 
@@ -1130,7 +1143,7 @@ a:hover {
 }
 
 .hover-grow:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 @media (max-width: 42rem) {
@@ -1187,10 +1200,6 @@ a:hover {
   font-size: 0.8rem;
   color: #999;
   margin-bottom: 1rem;
-}
-
-.post-list-item {
-  margin: 1rem;
 }
 
 .blog-post p {

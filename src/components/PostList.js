@@ -21,9 +21,9 @@ const PostList = ({ posts }) => {
                     itemScope
                     itemType="http://schema.org/Article"
                   >
-                    <section className="flex">
+                    <section className="row">
                       <Link to={post.fields.slug} itemProp="url">
-                        <GatsbyImage image={featuredImg} />
+                        <GatsbyImage image={featuredImg} className="post-list-item-img" />
                       </Link>
                       <div className="pl-5">
                         <h2>
