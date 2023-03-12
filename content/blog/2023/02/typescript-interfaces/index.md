@@ -1,6 +1,6 @@
 ---
 title: Harnessing the Power of TypeScript Interfaces - A Guide for Developers
-date: "2023-02-16T20:00:00.000Z"
+date: "2023-03-10T20:00:00.000Z"
 description: "Empowering Your Code with Type Safety and Organization"
 featuredImage: header.jpg
 ---
