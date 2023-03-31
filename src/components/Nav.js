@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Logo from "./Logo"
 
 const navigation = [
   { name: 'What I Do', href: '/' },
@@ -35,22 +36,24 @@ export const Nav = () => {
             <div className="flex flex-shrink-0 items-center">
               <Link to="/">
                 <div className="flex flex-shrink-0 items-center">
-                  <StaticImage
+                  {/* <StaticImage
                     className="bio-avatar logo-avatar"
                     formats={["auto", "webp", "avif"]}
-                    src="../img/about/headshot-round.png"
+                    src="../img/about/code-revolution.png"
                     width={30}
                     height={30}
                     quality={95}
-                    alt="Preston Wallace logo"
+                    alt="Coding Revolution logo"
                   />
                   <span className="logo-header text-cyan-400">
-                    Preston
-                  </span>
+                    Coding Revolution
+                  </span> */}
+                  {/* DevRocket */}
+                  <Logo width={200} height={40} tagline={true} />
                 </div>
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:block">
+            <div className="hidden sm:ml-6 sm:block flex flex-justify-center flex-align-center">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
                   <a
