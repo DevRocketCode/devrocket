@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Code with Confidence | Preston Wallace | Dev Rocket`,
+    title: `Code Your Future | Preston Wallace | Dev Rocket`,
     author: {
       name: `Preston Wallace`,
       summary: `a Full Stack Software Engineer with a longstanding love for everything tech. I currently work as a Software Engineer at MNTN, building solutions in Javascript, Node, GraphQL, and SQL.`,
