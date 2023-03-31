@@ -135,8 +135,8 @@ const BlogIndex = ({ data, location }) => {
               <div className="hero-content">
                 <div>
                   <h2 className="hero-title">Code</h2>
-                  <div className="script-font with-rules">WITH</div>
-                  <h2 className="hero-title">Confidence</h2>
+                  <div className="script-font with-rules">YOUR</div>
+                  <h2 className="hero-title">Future</h2>
                   <div className="hero-tagline">Master the programming skills <br/>that are <b>irresistible</b> to tech companies.</div>
 
                   <StaticImage
@@ -206,7 +206,7 @@ export default BlogIndex
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Software Engineering Made Simple" />
+export const Head = () => <Seo title="Dev Rocket" />
 
 export const pageQuery = graphql`
   {

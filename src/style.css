@@ -313,10 +313,6 @@ a:focus {
   /* color:#22d3ee */
 }
 
-.logo-avatar {
-  border:#22d3ee 2px solid;
-}
-
 .card {
   display: flex;
   justify-content: center;
