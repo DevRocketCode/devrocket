@@ -166,5 +166,4 @@ module.exports = {
       },
     },
   ],
-  pathPrefix: "/devrocket",
 }
