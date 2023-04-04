@@ -1,6 +1,6 @@
 ---
 title: Deploy Your First AWS Lambda Function with GitHub Actions
-date: "2023-02-26T20:00:00.000Z"
+date: "2023-03-16T20:00:00.000Z"
 description: "A Step-by-Step Guide to deploying to AWS Lambda - with Code Samples!"
 featuredImage: header.png
 ---

@@ -1,6 +1,6 @@
 ---
 title: TypeScript - Unleashing the Power of JavaScript
-date: "2023-02-16T20:00:00.000Z"
+date: "2023-02-26T20:00:00.000Z"
 description: "A Practical Example of Improved Code Scalability and Maintainability"
 featuredImage: header.jpg
 ---
