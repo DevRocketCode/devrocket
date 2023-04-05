@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
  */
 
+const fs = require('fs')
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -22,8 +23,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allMarkdownRemark(sort: { frontmatter: { date: ASC } }, limit: 1000) {
         nodes {
           id
+          excerpt
           fields {
             slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
+            type
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData(width: 300, height: 200)
+              }
+            }
           }
         }
       }
@@ -59,6 +72,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         },
       })
     })
+
+    
+    // leave out any exclusive posts (i.e. freebies)
+    const onlyBlogPosts = posts.filter(post => post.frontmatter.type !== 'exclusive');
+    
+    // Create blog posts JSON API by generating a static json file from posts
+    const outputPath = path.join(__dirname, 'static', 'blog-posts.json');
+    fs.writeFile(outputPath, JSON.stringify(onlyBlogPosts), err => {
+      if (err) {
+        console.error(err)
+        return
+      }
+      console.log('JSON file has been saved.');
+    });
+
   }
 }
 
