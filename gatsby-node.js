@@ -76,10 +76,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     
     // leave out any exclusive posts (i.e. freebies)
     const onlyBlogPosts = posts.filter(post => post.frontmatter.type !== 'exclusive');
+    // sort by date descending
+    const sortedBlogPosts = onlyBlogPosts.sort((a, b) => {
+      const dateA = new Date(a.frontmatter.date);
+      const dateB = new Date(b.frontmatter.date);
+      return dateB - dateA;
+    });
     
     // Create blog posts JSON API by generating a static json file from posts
     const outputPath = path.join(__dirname, 'static', 'blog-posts.json');
-    fs.writeFile(outputPath, JSON.stringify(onlyBlogPosts), err => {
+    fs.writeFile(outputPath, JSON.stringify(sortedBlogPosts), err => {
       if (err) {
         console.error(err)
         return
