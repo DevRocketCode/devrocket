@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "devrocket",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Code and Architecture training. Built with Gatsby.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Preston Wallace <wallace.preston@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
