@@ -16,6 +16,7 @@ const BlogPostTemplate = ({
   const featuredImg = getImage(post.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData)
   const isExclusive = post.frontmatter.type === "exclusive";
   const youTubeVideo = post.frontmatter.youTubeVideo;
+  const repository = post.frontmatter.repository;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -36,6 +37,25 @@ const BlogPostTemplate = ({
           }
           <br/>
         </header>
+        {
+          repository && <>
+            <button class="button button-info button-medium hover-grow">
+              <a href={repository}>
+                Code on GitHub
+              </a>
+            </button>  👈 Get the Code on GitHub
+          </>
+        }
+        <br/>
+        {
+          youTubeVideo && <>
+            <button class="button button-info button-medium hover-grow">
+              <a href={youTubeVideo}>
+                YouTube Video
+              </a>
+            </button>  👈 Watch the Video on YouTube
+          </>
+        }
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
@@ -123,6 +143,7 @@ export const pageQuery = graphql`
         }
         type
         youTubeVideo
+        repository
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
