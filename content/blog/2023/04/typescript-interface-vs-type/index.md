@@ -4,7 +4,7 @@ date: "2023-04-24T16:00:00.000Z"
 description: "Recipes for Well-Defined Data in TypeScript"
 repository: https://github.com/DevRocketCode/interfaces-vs-types/blob/main/src/app.ts
 featuredImage: header.jpg
-youTubeVideo: https://youtu.be/wQ-CWKhnCJc
+youTubeVideo: https://www.youtube.com/embed/wQ-CWKhnCJc?controls=0
 ---
 
 When we cook, we use recipes.  In recipes, we use ingredients.  Recipes contain collections of different ingredients.
