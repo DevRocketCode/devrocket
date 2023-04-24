@@ -18,6 +18,10 @@ const BlogPostTemplate = ({
   const youTubeVideo = post.frontmatter.youTubeVideo;
   const repository = post.frontmatter.repository;
 
+  const hero = youTubeVideo 
+    ? <YouTubeVideo src={youTubeVideo} />
+    : featuredImg && <GatsbyImage image={featuredImg} className="my-5" />
+
   return (
     <Layout location={location} title={siteTitle}>
       <article
@@ -29,11 +33,9 @@ const BlogPostTemplate = ({
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <h4 itemProp="headline">{post.frontmatter.description}</h4>
           <p className="date">{post.frontmatter.date}</p>
+
           {
-            featuredImg && <GatsbyImage image={featuredImg} className="my-5" />
-          }
-          {
-            youTubeVideo && <YouTubeVideo src={youTubeVideo} />
+            hero
           }
           <br/>
         </header>

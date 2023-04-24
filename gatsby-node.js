@@ -32,6 +32,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             title
             description
             type
+            status
             featuredImage {
               childImageSharp {
                 gatsbyImageData(width: 300, height: 200)
