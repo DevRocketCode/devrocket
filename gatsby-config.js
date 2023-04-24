@@ -12,16 +12,17 @@ module.exports = {
     title: `Code Your Future | Preston Wallace | Dev Rocket`,
     author: {
       name: `Preston Wallace`,
-      summary: `a Full Stack Software Engineer with a longstanding love for everything tech. I currently work as a Software Engineer at MNTN, building solutions in Javascript, Node, GraphQL, and SQL.`,
+      summary: `I empower new and seasoned engineers to level-up their skills, get that promotion, and ultimately crush it in life.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Master the programming skills that are irresistible to tech companies.`,
+    siteUrl: `https://devrocket.io/`,
     social: {
       twitter: `PrestonCreate`,
       linkedin: `prestonwallace`
     },
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
