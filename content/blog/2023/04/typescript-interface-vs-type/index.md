@@ -1,6 +1,6 @@
 ---
 title: "Interfaces vs Types in TypeScript: What's the diff?"
-date: "2023-04-21T20:00:00.000Z"
+date: "2023-04-24T16:00:00.000Z"
 description: "Recipes for Well-Defined Data in TypeScript"
 repository: https://github.com/DevRocketCode/interfaces-vs-types/blob/main/src/app.ts
 featuredImage: header.jpg
