@@ -1,7 +1,7 @@
 ---
 title: Why RESTful APIs are Holding You Back
 description: Embrace the Future with GraphQL
-youTubeVideo: https://www.youtube.com/embed/WrbEJ3cpKK4?&controls=0
+youTubeVideo: WrbEJ3cpKK4
 type: exclusive
 ---
 

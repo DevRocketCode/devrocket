@@ -4,6 +4,8 @@ date: "2023-05-01T20:00:00.000Z"
 description: "Learn how to build a server from scratch, using Node.js, Express, and TypeScript."
 featuredImage: header.jpeg
 status: draft
+repository: https://github.com/DevRocketCode/pantry-pal
+youTubeVideo: 0jKrLAlmKMw
 ---
 
 ## Introduction

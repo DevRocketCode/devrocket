@@ -163,7 +163,7 @@ const BlogIndex = ({ data, location }) => {
           <div id="hello-area" className="content-container">
             <div className="text-3xl font-extrabold text-gray-600">Hello! I'm Preston</div>
             <p className="section-padding text-xl">I empower new and seasoned engineers to level-up their skills, <br/> get that promotion, and ultimately crush it in life.</p>
-            <YouTubeVideo src="https://www.youtube.com/embed/K0Q48l0060I?&controls=0" />
+            <YouTubeVideo videoId="K0Q48l0060I" />
           </div>
         </section>
 

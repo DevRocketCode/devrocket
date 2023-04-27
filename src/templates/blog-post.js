@@ -19,7 +19,7 @@ const BlogPostTemplate = ({
   const repository = post.frontmatter.repository;
 
   const hero = youTubeVideo 
-    ? <YouTubeVideo src={youTubeVideo} />
+    ? <YouTubeVideo videoId={youTubeVideo} />
     : featuredImg && <GatsbyImage image={featuredImg} className="my-5" />
 
   return (
@@ -52,7 +52,7 @@ const BlogPostTemplate = ({
         {
           youTubeVideo && <>
             <button class="button button-info button-medium hover-grow">
-              <a href={youTubeVideo}>
+              <a href={`https://www.youtube.com/watch?v=${youTubeVideo}`}>
                 YouTube Video
               </a>
             </button>  👈 Watch the Video on YouTube
