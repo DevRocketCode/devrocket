@@ -3,6 +3,8 @@ title: "Build a Plagiarism Detection Service"
 date: "2023-05-09T20:00:00.000Z"
 description: "Using TypeScript and the ChatGPT API from OpenAI"
 featuredImage: header.png
+youTubeVideo: 9eiumgxI3Ko
+repository: https://github.com/DevRocketCode/plagiarism-detection-service
 ---
 
 ## The Conference
