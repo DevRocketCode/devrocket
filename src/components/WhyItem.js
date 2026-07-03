@@ -5,18 +5,16 @@ const WhyItem = ({ borderRadius, title,
   description, icon }) => {
     
   return (
-    <div className="why-item hover-grow" data-wow-delay="0.3s">
-      <div>
-        <div className="icon" style={{borderRadius}}>
-          <i className={`icon-${icon}`}></i>
-        </div>
+    <article className="why-item hover-grow" data-wow-delay="0.3s">
+      <div className="icon" style={{borderRadius}}>
+        <i className={`icon-${icon}`}></i>
       </div>
       <div className="why-content">
         <h3>{title}</h3>
         <h4>{subtitle}</h4>
         <p>{description}</p>
       </div>
-    </div>
+    </article>
   )
 }
 

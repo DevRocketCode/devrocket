@@ -1,5 +1,4 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 
 import { Disclosure } from '@headlessui/react'
@@ -7,81 +6,99 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from "./Logo"
 
 const navigation = [
-  { name: 'What I Do', href: '/' },
+  { name: 'About', href: '/#about' },
+  { name: 'Why', href: '/#why' },
+  { name: 'Proof', href: '/#testimonials' },
   { name: 'Blog', href: '/blog' },
   { name: 'Experience', href: '/about/#experience' },
-  { name: 'FREE Guide', href: '/typescript-essentials-free-guide', className: 'block px-3 py-2 rounded-md text-base bg-cyan-600 hover:bg-cyan-500 text-white font-bold' },
-  { name: 'About', href: '/about' },
 ]
 
 export const Nav = () => {
 
-  return <Disclosure as="nav" id="navbar" className="bg-gray-800">
+  return <Disclosure as="header" id="navbar" className="site-header">
   {({ open }) => (
     <>
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-              <span className="sr-only">Open main menu</span>
-              {open ? (
-                <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-              )}
-            </Disclosure.Button>
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-            <div className="flex flex-shrink-0 items-center">
-              <Link to="/">
-                <div className="flex flex-shrink-0 items-center">
-                  {/* <StaticImage
-                    className="bio-avatar logo-avatar"
-                    formats={["auto", "webp", "avif"]}
-                    src="../img/about/code-revolution.png"
-                    width={30}
-                    height={30}
-                    quality={95}
-                    alt="Coding Revolution logo"
-                  />
-                  <span className="logo-header text-cyan-400">
-                    Coding Revolution
-                  </span> */}
-                  {/* DevRocket */}
-                  <Logo width={200} height={40} tagline={true} />
-                </div>
-              </Link>
-            </div>
-            <div className="hidden sm:ml-6 sm:block flex flex-justify-center flex-align-center">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={item.className ? item.className : 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-bold'}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
+      <div className="site-header__inner">
+        <Link to="/" className="site-logo-link" aria-label="Dev Rocket home">
+          <Logo width={168} height={44} tagline={false} />
+        </Link>
+
+        <nav className="site-nav" aria-label="Primary navigation">
+          {navigation.map((item) => (
+            <a key={item.name} href={item.href}>
+              {item.name}
+            </a>
+          ))}
+        </nav>
+
+        <div className="site-nav-actions">
+          <a
+            className="site-social-link"
+            href="https://www.youtube.com/channel/UCoiCi3NyMZ98Rj5K3vZfExw"
+            aria-label="Dev Rocket on YouTube"
+          >
+            <i className="icon-social-youtube"></i>
+          </a>
+          <a
+            className="site-social-link"
+            href="https://github.com/wallacepreston"
+            aria-label="Preston Wallace on GitHub"
+          >
+            <i className="icon-social-github"></i>
+          </a>
+          <a className="nav-cta" href="/typescript-essentials-free-guide">
+            Free guide
+          </a>
+          <Disclosure.Button className="site-menu-button">
+            <span className="sr-only">Open main menu</span>
+            {open ? (
+              <XMarkIcon className="site-menu-icon" aria-hidden="true" />
+            ) : (
+              <Bars3Icon className="site-menu-icon" aria-hidden="true" />
+            )}
+          </Disclosure.Button>
         </div>
       </div>
 
-      <Disclosure.Panel className="sm:hidden mobile-menu">
-        <div className="space-y-1 px-2 pt-2 pb-3">
+      <Disclosure.Panel className="mobile-menu">
+        <div className="mobile-menu__inner">
           {navigation.map((item) => (
             <Disclosure.Button
               key={item.name}
               as="a"
               href={item.href}
-              className={item.className ? item.className : 'text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'}
+              className="mobile-menu__link"
             >
               {item.name}
             </Disclosure.Button>
           ))}
+          <Disclosure.Button
+            as="a"
+            href="/typescript-essentials-free-guide"
+            className="mobile-menu__link mobile-menu__link--accent"
+          >
+            Free guide
+          </Disclosure.Button>
+          <div className="mobile-menu__socials">
+            <a
+              href="https://www.youtube.com/channel/UCoiCi3NyMZ98Rj5K3vZfExw"
+              aria-label="Dev Rocket on YouTube"
+            >
+              <i className="icon-social-youtube"></i>
+            </a>
+            <a
+              href="https://github.com/wallacepreston"
+              aria-label="Preston Wallace on GitHub"
+            >
+              <i className="icon-social-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/prestonwallace/"
+              aria-label="Preston Wallace on LinkedIn"
+            >
+              <i className="icon-social-linkedin"></i>
+            </a>
+            </div>
         </div>
       </Disclosure.Panel>
     </>

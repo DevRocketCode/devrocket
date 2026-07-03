@@ -4,21 +4,24 @@ import { Link } from "gatsby"
 const GetFree = () => {
 
   return (
-    <div className="section-padding get-free">
+    <section className="section-padding get-free section--accent">
       <div className="content-container">
-        <h2 className="section-title">Want to boost your TypeScript knowledge, fast?</h2>
-        <p><em>👉 Get the <b>FREE</b> guide. 👈</em></p>
-        <br/>
-        <h3>TypeScript Essentials: 5 Critical Keys to Using TypeScript Effectively</h3>
-        
-        <div className="section-padding">
-        <button className="button button-info button-medium hover-grow">
-          {/* alternate signup form https://mailchi.mp/93f51d833d92/free-typescript-essentials-guide */}
-          <Link to="/typescript-essentials-free-guide">Get Your FREE Guide</Link>
-        </button>
+        <div className="guide-callout">
+          <p className="label">Free field guide</p>
+          <h2 className="section-title">Want to boost your TypeScript knowledge, fast?</h2>
+          <p className="text--secondary">
+            Get the concise Dev Rocket guide for using TypeScript effectively in real projects.
+          </p>
+          <h3>TypeScript Essentials: 5 Critical Keys to Using TypeScript Effectively</h3>
+
+          <div className="guide-callout__action">
+            <Link className="button button-info button-medium hover-grow" to="/typescript-essentials-free-guide">
+              Get your free guide
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

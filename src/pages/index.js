@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -120,6 +120,21 @@ const whyItems = [
   },
 ];
 
+const heroStats = [
+  { value: '10+', label: 'years teaching engineers' },
+  { value: '100s', label: 'students mentored' },
+  { value: 'JS', label: 'TypeScript focus' },
+];
+
+const expertiseTags = [
+  'TypeScript',
+  'React',
+  'Architecture',
+  'Mentorship',
+  'Career growth',
+  'Interviews',
+];
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -129,48 +144,93 @@ const BlogIndex = ({ data, location }) => {
       <div className="home-container">
 
         {/* hero section */}
-        <div id="hero-area" className="hero-area-bg">
-          <div className="content-container">
-            <div className="row">
-              <div className="hero-content">
-                <div>
-                  <h2 className="hero-title">Code</h2>
-                  <div className="script-font with-rules">YOUR</div>
-                  <h2 className="hero-title">Future</h2>
-                  <div className="hero-tagline">Master the programming skills <br/>that are <b>irresistible</b> to tech companies.</div>
+        <section id="hero-area" className="hero-area-bg">
+          <div className="hero-gridlines" aria-hidden="true"></div>
+          <svg className="hero-lines" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path className="hero-line" d="M-120,420 Q260,120 600,410 T1320,360" />
+            <path className="hero-line hero-line--secondary" d="M-120,540 Q350,230 700,470 T1320,300" />
+            <path className="hero-line hero-line--tertiary" d="M-120,260 Q220,520 520,350 T1320,470" />
+          </svg>
 
-                  <StaticImage
-                    className="hero-avatar"
-                    formats={["auto", "webp", "avif"]}
-                    src='../img/about/headshot.jpg'
-                    quality={95}
-                    alt="Preston Wallace"
-                    style={{zIndex:'10', borderRadius: '50%'}}
-                  />
-                  <br/>
-
-                </div>
+          <div className="content-container hero-grid">
+            <div className="hero-content">
+              <p className="hero-label">Code and architecture training</p>
+              <h1 className="hero-title">Dev Rocket</h1>
+              <p className="hero-tagline">
+                Code your future with clear programming lessons, TypeScript guidance, and mentoring built for real engineering work.
+              </p>
+              <div className="hero-actions">
+                <Link className="button button-info button-medium" to="/typescript-essentials-free-guide">
+                  Start free guide
+                </Link>
+                <a className="button button-ghost button-medium" href="#why">
+                  See the approach
+                </a>
               </div>
             </div>
+
+            <aside className="hero-profile-card" aria-label="Preston Wallace profile">
+              <StaticImage
+                className="hero-avatar"
+                formats={["auto", "webp", "avif"]}
+                src='../img/about/headshot.jpg'
+                quality={95}
+                alt="Preston Wallace"
+              />
+              <div className="hero-profile-card__body">
+                <p className="label">Instructor</p>
+                <h2>Preston Wallace</h2>
+                <p>Software engineer, mentor, and technical educator helping developers get sharper without the fog.</p>
+              </div>
+              <div className="hero-stats">
+                {heroStats.map(stat => (
+                  <div className="hero-stat" key={stat.label}>
+                    <span className="hero-stat__value">{stat.value}</span>
+                    <span className="hero-stat__label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </aside>
           </div>
-        </div>
+
+          <a className="hero-scroll" href="#about">
+            <span>Explore</span>
+            <span className="hero-scroll__line"></span>
+          </a>
+        </section>
+
+        {/* about section */}
+        <section id="about" className="section-padding">
+          <div id="hello-area" className="content-container about-grid">
+            <div className="about-content">
+              <p className="label">Hello, I'm Preston</p>
+              <h2 className="section-title">Engineering lessons with a human pulse.</h2>
+              <p className="text--secondary">
+                I empower new and seasoned engineers to level up their skills, get that promotion, and ultimately crush it in life.
+              </p>
+              <div className="expertise">
+                {expertiseTags.map(tag => (
+                  <span className="expertise__tag" key={tag}>{tag}</span>
+                ))}
+              </div>
+            </div>
+            <div className="video-panel">
+              <YouTubeVideo videoId="K0Q48l0060I" />
+            </div>
+          </div>
+        </section>
 
         {/* free download section */}
         <GetFree />
 
-        {/* about section */}
-        <section id="about" className="section-padding">
-          <div id="hello-area" className="content-container">
-            <div className="text-3xl font-extrabold text-gray-600">Hello! I'm Preston</div>
-            <p className="section-padding text-xl">I empower new and seasoned engineers to level-up their skills, <br/> get that promotion, and ultimately crush it in life.</p>
-            <YouTubeVideo videoId="K0Q48l0060I" />
-          </div>
-        </section>
-
         {/* testimonials section */}
-        <section id="testimonials" className="section-padding">
+        <section id="testimonials" className="section-padding section--dark">
           <div className="content-container">
-
+            <p className="label">Student proof</p>
+            <h2 className="section-title">Mentorship that sticks after the lesson ends.</h2>
+            <p className="section-intro text--secondary">
+              Developers consistently point to clarity, calm, and technical depth as the reason Dev Rocket works.
+            </p>
             <div className="testimonials-container">
               {testimonials.map((testimonial, index) => (
                 <Testimonial key={index} testimonial={testimonial} />
@@ -182,7 +242,13 @@ const BlogIndex = ({ data, location }) => {
         {/* why section */}
         <section id="why" className="section-padding">
           <div className="content-container">
-            <h2 className="section-title  wow flipInX" data-wow-delay="0.4s">why code with me</h2>
+            <div className="approach-header">
+              <p className="label">Why code with me</p>
+              <h2 className="section-title wow flipInX" data-wow-delay="0.4s">A calmer way to build serious skills.</h2>
+              <p className="section-intro text--secondary">
+                The lessons are direct, practical, and built to help you keep momentum when programming gets noisy.
+              </p>
+            </div>
             <div className="why-container">
               {whyItems.map((why, index) => (
                 <WhyItem key={index} {...why} />

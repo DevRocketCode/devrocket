@@ -3,7 +3,8 @@ import * as React from "react"
 const Testimonial = ({ testimonial }) => {
 
   return (
-    <div className="testimonials-item hover-grow wow fadeInUp" data-wow-delay="0.3s">
+    <article className="testimonials-item hover-grow wow fadeInUp" data-wow-delay="0.3s">
+      <div className="testimonials-quote-mark">"</div>
       <div className="testimonials-meta">
         <div className="testimonials-image">
           <img className="testimonials-image" src={testimonial.image} alt={testimonial.name} />
@@ -16,7 +17,7 @@ const Testimonial = ({ testimonial }) => {
       <div className="testimonials-content">
         <p>{testimonial.quote}</p>
       </div>
-    </div>
+    </article>
   )
 }
 
