@@ -1,0 +1,15 @@
+---
+import CaseStudy from './CaseStudy.astro';
+import { caseStudies } from '../data/caseStudies';
+---
+
+<section id="examples" class="section-padding">
+  <div class="content-container">
+    <h2 class="section-title">Recent Work</h2>
+    <div class="services-row">
+      {caseStudies.map((caseStudy) => (
+        <CaseStudy caseStudy={caseStudy} />
+      ))}
+    </div>
+  </div>
+</section>

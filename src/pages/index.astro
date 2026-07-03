@@ -1,0 +1,40 @@
+---
+import Layout from '../components/Layout.astro';
+import Hero from '../components/Hero.astro';
+import WhatWeDo from '../components/WhatWeDo.astro';
+import HowWeWork from '../components/HowWeWork.astro';
+import Examples from '../components/Examples.astro';
+import Testimonial from '../components/Testimonial.astro';
+import WhyWorkWithUs from '../components/WhyWorkWithUs.astro';
+import WhoWeAre from '../components/WhoWeAre.astro';
+import Contact from '../components/Contact.astro';
+import { testimonials } from '../data/testimonials';
+---
+
+<Layout title="DevRocket - Product Engineering Studio">
+  <div class="home-container">
+    <Hero />
+    
+    <WhatWeDo />
+    
+    <HowWeWork />
+    
+    <Examples />
+    
+    <section id="testimonials" class="section-padding">
+      <div class="content-container">
+        <div class="testimonials-container">
+          {testimonials.map((testimonial) => (
+            <Testimonial testimonial={testimonial} />
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <WhyWorkWithUs />
+    
+    <WhoWeAre />
+    
+    <Contact />
+  </div>
+</Layout>

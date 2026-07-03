@@ -54,9 +54,26 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
+# gatsby files (legacy)
 .cache/
-public
+
+# Astro build output
+dist/
+.astro/
+
+# Gatsby build artifacts (legacy - can be removed)
+public/*.js
+public/*.js.map
+public/*.js.LICENSE.txt
+public/_gatsby/
+public/~partytown/
+public/page-data/
+public/static/
+public/chunk-map.json
+public/webpack.stats.json
+
+# Note: public/ is NOT ignored - it contains static assets (CNAME, robots.txt, images, fonts) that need to be committed
+# But we ignore auto-generated JS/build files above
 
 # Mac files
 .DS_Store

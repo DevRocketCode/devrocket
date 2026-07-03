@@ -1,0 +1,15 @@
+---
+import WhyItem from './WhyItem.astro';
+import { capabilities } from '../data/capabilities';
+---
+
+<section id="why-work-with-us" class="section-padding">
+  <div class="content-container">
+    <h2 class="section-title">Why Work With Us</h2>
+    <div class="why-container">
+      {capabilities.map((capability) => (
+        <WhyItem {...capability} />
+      ))}
+    </div>
+  </div>
+</section>
