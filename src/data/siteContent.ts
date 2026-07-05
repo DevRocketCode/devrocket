@@ -173,7 +173,7 @@ export const founder = {
 
 export const heroTestimonial = {
     name: 'Jean Leconte II',
-    detail: 'GenAI Engineer, AWS',
+    detail: 'Generative AI Engineer, AWS',
     image: '/images/testimonials/jean-leconte-ii.jpeg',
     socialUrl: 'https://www.linkedin.com/in/jean-leconte-ii/',
     quote:
@@ -182,8 +182,16 @@ export const heroTestimonial = {
 
 export const testimonials = [
   {
+    name: 'Jean Leconte II',
+    detail: 'Generative AI Engineer, AWS',
+    image: '/images/testimonials/jean-leconte-ii.jpeg',
+    socialUrl: 'https://www.linkedin.com/in/jean-leconte-ii/',
+    quote:
+      "I've learned a ton from Preston and recommend if anyone reading this has the opportunity to work with him in any capacity they should take it!",
+  },
+  {
     name: 'Justin Cook',
-    detail: 'GenAI Engineer, AWS',
+    detail: 'Software Engineer',
     image: '/images/testimonials/justin-cook-developer.jpeg',
     socialUrl: 'https://www.linkedin.com/in/justin-cook-developer/',
     quote: "I've learned a ton from Preston and recommend if anyone reading this has the opportunity to work with him in any capacity they should take it!",
@@ -203,14 +211,6 @@ export const testimonials = [
     socialUrl: 'https://www.linkedin.com/in/b17z/',
     quote:
       'Preston is a gifted Software Engineer and a thought leader in technical education, training, and communication.',
-  },
-  {
-    name: 'Jean Leconte II',
-    detail: 'Software engineer',
-    image: '/images/testimonials/jean-leconte-ii.jpeg',
-    socialUrl: 'https://www.linkedin.com/in/jean-leconte-ii/',
-    quote:
-      "I've learned a ton from Preston and recommend if anyone reading this has the opportunity to work with him in any capacity they should take it!",
   },
   {
     name: 'Hugo Campos',
