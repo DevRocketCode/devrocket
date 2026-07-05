@@ -1,12 +1,2 @@
-// custom typefaces
-import "@fontsource/montserrat/variable.css"
-import "@fontsource/merriweather"
-// normalize CSS across browsers
-import "./src/normalize.css"
-// tailwind
-import "./src/tailwind.css"
-// custom CSS styles
-import "./src/style.css"
-
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
+// Legacy Gatsby hook intentionally left empty.
+// The Astro site owns global styles through src/layouts/BaseLayout.astro.

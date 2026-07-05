@@ -5,8 +5,14 @@ import { caseStudies } from '../data/caseStudies';
 
 <section id="examples" class="section-padding">
   <div class="content-container">
-    <h2 class="section-title">Recent Work</h2>
-    <div class="services-row">
+    <div class="section-heading">
+      <p class="eyebrow">Work</p>
+      <h2 class="section-title">Recent product builds</h2>
+      <p class="section-lead">
+        Representative engagements across prototypes, internal systems, automation, and launch-ready applications.
+      </p>
+    </div>
+    <div class="services-row work-grid">
       {caseStudies.map((caseStudy) => (
         <CaseStudy caseStudy={caseStudy} />
       ))}

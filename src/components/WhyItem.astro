@@ -7,18 +7,16 @@ interface Props {
   icon: string;
 }
 
-const { borderRadius, title, subtitle, description, icon } = Astro.props;
+const { title, subtitle, description, icon } = Astro.props;
 ---
 
-<div class="why-item hover-grow" data-wow-delay="0.3s">
-  <div>
-    <div class="icon" style={borderRadius ? { borderRadius } : undefined}>
-      <i class={`icon-${icon}`}></i>
-    </div>
+<article class="why-item">
+  <div class="icon">
+    <i class={`icon-${icon}`}></i>
   </div>
   <div class="why-content">
     <h3>{title}</h3>
     <h4>{subtitle}</h4>
     <p>{description}</p>
   </div>
-</div>
+</article>

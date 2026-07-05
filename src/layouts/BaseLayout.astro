@@ -1,25 +1,39 @@
 ---
+import '../styles/site.css';
+
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "DevRocket - Product Engineering Studio" } = Astro.props;
+const {
+  title = "DevRocket - AI Software Engineering and Production AI Systems",
+  description = "DevRocket designs and ships production AI systems, workflow automation, RAG knowledge systems, document processing, and full-stack AI products.",
+} = Astro.props;
+
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString();
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Product Engineering for Operators" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Bodoni+Moda:opsz,wght@6..96,600;6..96,700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" href="/img/about/favicon.gif" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="stylesheet" href="/fonts/simple-line-icons.css" />
     <link rel="stylesheet" href="/fonts/font-awesome.min.css" />
-    <link rel="stylesheet" href="/style.css" />
     <title>{title}</title>
   </head>
   <body>

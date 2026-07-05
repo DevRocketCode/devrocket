@@ -10,7 +10,7 @@ interface Props {
 const { testimonial } = Astro.props;
 ---
 
-<div class="testimonials-item hover-grow wow fadeInUp" data-wow-delay="0.3s">
+<article class="testimonials-item">
   <div class="testimonials-meta">
     <div class="testimonials-image">
       <img
@@ -32,4 +32,4 @@ const { testimonial } = Astro.props;
   <div class="testimonials-content">
     <p>{testimonial.quote}</p>
   </div>
-</div>
+</article>

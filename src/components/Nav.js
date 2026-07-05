@@ -7,11 +7,12 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from "./Logo"
 
 const navigation = [
-  { name: 'What I Do', href: '/' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Experience', href: '/about/#experience' },
-  { name: 'FREE Guide', href: '/typescript-essentials-free-guide', className: 'block px-3 py-2 rounded-md text-base bg-cyan-600 hover:bg-cyan-500 text-white font-bold' },
-  { name: 'About', href: '/about' },
+  { name: 'Home', href: '#hero-area' },
+  { name: 'Capabilities', href: '#capabilities' },
+  { name: 'Systems', href: '#systems' },
+  { name: 'Process', href: '#process' },
+  { name: 'About', href: '#about' },
+  { name: 'Contact', href: '#contact' },
 ]
 
 export const Nav = () => {

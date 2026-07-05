@@ -11,9 +11,9 @@ interface Props {
 const { caseStudy } = Astro.props;
 ---
 
-<div class="services-item hover-grow">
+<article class="services-item work-card">
   <h3>{caseStudy.title}</h3>
-  <p><strong>Problem:</strong> {caseStudy.problem}</p>
-  <p><strong>Solution:</strong> {caseStudy.solution}</p>
-  <p><strong>Timeframe:</strong> {caseStudy.timeframe}</p>
-</div>
+  <p><strong>Problem</strong> {caseStudy.problem}</p>
+  <p><strong>Solution</strong> {caseStudy.solution}</p>
+  <p><strong>Timeframe</strong> {caseStudy.timeframe}</p>
+</article>

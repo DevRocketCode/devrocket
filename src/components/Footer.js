@@ -17,7 +17,7 @@ export const Footer = () => {
               <a className="linkedin" href="https://github.com/wallacepreston"><i className="icon-social-github"></i></a>
             </li>
           </ul>
-          © {new Date().getFullYear()}, Built by Preston Wallace
+          © {new Date().getFullYear()}, Preston Wallace
           </div>
         </div>
       </div>

@@ -1,0 +1,41 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  body: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  eyebrow = 'Contact',
+  title,
+  body,
+  primaryHref = 'mailto:preston@devrocket.io',
+  primaryLabel = 'preston@devrocket.io',
+  secondaryHref,
+  secondaryLabel,
+} = Astro.props;
+---
+
+<section id="contact" class="section-padding">
+  <div class="content-container">
+    <div class="contact-panel">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 class="section-title">{title}</h2>
+      <p>{body}</p>
+      <div class="contact-actions">
+        <a href={primaryHref} class="button button-primary">
+          {primaryLabel} <span aria-hidden="true">-&gt;</span>
+        </a>
+        {secondaryHref && secondaryLabel && (
+          <a href={secondaryHref} class="button button-ghost">
+            {secondaryLabel} <span aria-hidden="true">-&gt;</span>
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

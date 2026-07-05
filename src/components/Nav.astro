@@ -1,40 +1,85 @@
 ---
-import Logo from './Logo.astro';
-
 const navigation = [
-  { name: 'What We Do', href: '#what-we-do' },
-  { name: 'How We Work', href: '#how-we-work' },
-  { name: 'Examples', href: '#examples' },
-  { name: 'Who We Are', href: '#who-we-are' },
+  { name: 'Home', href: '#hero-area' },
+  { name: 'Capabilities', href: '#capabilities' },
+  { name: 'Systems', href: '#systems' },
+  { name: 'Process', href: '#process' },
+  { name: 'About', href: '#about' },
   { name: 'Contact', href: '#contact' },
 ];
 ---
 
-<nav id="navbar" class="bg-gray-800">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-16 items-center justify-between">
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
-        <div class="flex flex-shrink-0 items-center">
-          <a href="/">
-            <div class="flex flex-shrink-0 items-center">
-              <Logo width={200} height={40} tagline={true} />
-            </div>
-          </a>
-        </div>
-        <div class="hidden sm:ml-6 sm:block flex flex-justify-center flex-align-center">
-          <div class="flex space-x-4">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-bold"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </div>
+<nav id="navbar" class="site-header" aria-label="Primary navigation">
+  <div class="site-header__inner">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      data-menu-toggle
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a class="brand" href="/" aria-label="DevRocket home">
+      <span class="brand__mark">
+        <img src="/img/about/dev-rocket-icon.png" alt="" />
+      </span>
+      <span class="brand__name">DevRocket</span>
+    </a>
+
+    <div class="site-nav">
+      {navigation.map((item) => (
+        <a href={item.href}>{item.name}</a>
+      ))}
+    </div>
+
+    <div class="site-actions">
+      <a class="social-button" href="https://www.linkedin.com/in/prestonwallace/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+      <a class="button button-outline-strong header-start" href="#contact">Get Started</a>
+    </div>
+  </div>
+
+  <div id="mobile-nav" class="mobile-nav" data-mobile-menu data-open="false">
+    <div class="content-container mobile-nav__inner">
+      {navigation.map((item) => (
+        <a href={item.href}>{item.name}</a>
+      ))}
+      <div class="mobile-nav__actions">
+        <a class="social-button" href="https://www.linkedin.com/in/prestonwallace/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        </a>
+        <a class="button button-outline-strong header-start" href="#contact">Get Started</a>
       </div>
     </div>
   </div>
 </nav>
+
+<script is:inline>
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
+
+  const setMenuOpen = (isOpen) => {
+    if (!menuToggle || !mobileMenu) return;
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.dataset.open = String(isOpen);
+    mobileMenu.dataset.open = String(isOpen);
+  };
+
+  menuToggle?.addEventListener('click', () => {
+    setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenuOpen(false);
+  });
+</script>

@@ -1,0 +1,32 @@
+---
+interface Founder {
+  name: string;
+  role: string;
+  image: string;
+  summary: string;
+  paragraphs: string[];
+}
+
+interface Props {
+  founder: Founder;
+}
+
+const { founder } = Astro.props;
+---
+
+<div class="founder-bio">
+  <div class="founder-bio__copy">
+    <p class="eyebrow">Founder</p>
+    <h2 class="section-title">{founder.name}</h2>
+    <p class="founder-role">{founder.role}</p>
+    <p class="founder-summary">{founder.summary}</p>
+    {founder.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+
+  <div class="about-portrait">
+    <img src={founder.image} alt={founder.name} />
+    <div class="portrait-badge" aria-label="DevRocket">
+      <img src="/img/about/dev-rocket-icon.png" alt="" />
+    </div>
+  </div>
+</div>

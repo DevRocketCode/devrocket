@@ -2,19 +2,35 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="footer-area section-padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
-          <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
-            <li>
-              <a class="linkedin" href="https://www.linkedin.com/in/prestonwallace/" target="_blank" rel="noreferrer"><i class="icon-social-linkedin"></i></a>
-            </li>
-          </ul>
-          © {currentYear}, Built by Preston Wallace
-        </div>
-      </div>
+<footer class="footer-area">
+  <div class="content-container footer-inner">
+    <div class="footer-brand">
+      <a class="brand brand--footer" href="#hero-area" aria-label="DevRocket home">
+        <span class="brand__mark">
+          <img src="/img/about/dev-rocket-icon.png" alt="" />
+        </span>
+        <span class="brand__name">DevRocket</span>
+      </a>
+      <p>Founder-led AI systems practice designing and shipping production workflow automation, RAG, and AI product software.</p>
     </div>
+
+    <div class="footer-links" aria-label="Footer navigation">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#systems">Systems</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-contact">
+      <a href="mailto:preston@devrocket.io">preston@devrocket.io</a>
+      <a class="social-button" href="https://www.linkedin.com/in/prestonwallace/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="content-container footer-bottom">
+    <p>© {currentYear}, Preston Wallace</p>
   </div>
 </footer>
