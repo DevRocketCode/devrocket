@@ -1,0 +1,29 @@
+---
+interface Capability {
+  icon: string;
+  title: string;
+  summary: string;
+  points: string[];
+}
+
+interface Props {
+  capabilities: Capability[];
+}
+
+const { capabilities } = Astro.props;
+---
+
+<div class="capability-grid">
+  {capabilities.map((capability) => (
+    <article class="capability-card">
+      <div class="capability-icon" aria-hidden="true">
+        <i class={`fa ${capability.icon}`}></i>
+      </div>
+      <h3>{capability.title}</h3>
+      <p>{capability.summary}</p>
+      <ul>
+        {capability.points.map((point) => <li>{point}</li>)}
+      </ul>
+    </article>
+  ))}
+</div>

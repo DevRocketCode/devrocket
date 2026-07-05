@@ -1,0 +1,90 @@
+---
+interface SystemCard {
+  title: string;
+  problem: string;
+  type: string;
+  architecture: string;
+  outcomes: string[];
+  details?: string[];
+}
+
+interface Props {
+  systems: SystemCard[];
+}
+
+const { systems } = Astro.props;
+---
+
+<div class="system-accordion" data-system-accordion>
+  {systems.map((system, index) => (
+    <article class="system-accordion__item" data-accordion-item data-open="false">
+      <button
+        class="system-accordion__summary"
+        type="button"
+        aria-expanded="false"
+        aria-controls={`system-panel-${index}`}
+        data-accordion-trigger
+      >
+        <span class="system-accordion__index">{String(index + 1).padStart(2, '0')}</span>
+        <span class="system-accordion__heading">
+          <span>{system.type}</span>
+          <strong>{system.title}</strong>
+        </span>
+        <span class="system-accordion__metric">{system.outcomes[0]}</span>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
+      </button>
+
+      <div
+        id={`system-panel-${index}`}
+        class="system-accordion__body"
+        aria-hidden="true"
+        data-accordion-body
+      >
+        <div class="system-accordion__body-inner">
+          <dl>
+            <div>
+              <dt>Business problem</dt>
+              <dd>{system.problem}</dd>
+            </div>
+            <div>
+              <dt>System type</dt>
+              <dd>{system.type}</dd>
+            </div>
+            <div>
+              <dt>Architecture category</dt>
+              <dd>{system.architecture}</dd>
+            </div>
+          </dl>
+
+          {system.details && (
+            <ul class="system-detail-list">
+              {system.details.map((detail) => <li>{detail}</li>)}
+            </ul>
+          )}
+
+          <ul class="outcome-list">
+            {system.outcomes.map((outcome) => <li>{outcome}</li>)}
+          </ul>
+        </div>
+      </div>
+    </article>
+  ))}
+</div>
+
+<script is:inline>
+  document.querySelectorAll('[data-system-accordion]').forEach((accordion) => {
+    accordion.querySelectorAll('[data-accordion-trigger]').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('[data-accordion-item]');
+        const body = item?.querySelector('[data-accordion-body]');
+        const isOpen = item?.dataset.open === 'true';
+
+        if (!item || !body) return;
+
+        item.dataset.open = String(!isOpen);
+        trigger.setAttribute('aria-expanded', String(!isOpen));
+        body.setAttribute('aria-hidden', String(isOpen));
+      });
+    });
+  });
+</script>

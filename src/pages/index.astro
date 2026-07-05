@@ -1,0 +1,107 @@
+---
+import Layout from '../components/Layout.astro';
+import Hero from '../components/Hero.astro';
+import StatRow from '../components/StatRow.astro';
+import CapabilityCards from '../components/CapabilityCards.astro';
+import SystemCards from '../components/SystemCards.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import FounderBio from '../components/FounderBio.astro';
+import Testimonials from '../components/Testimonials.astro';
+import ScheduleCall from '../components/ScheduleCall.astro';
+import {
+  capabilities,
+  founder,
+  founderPrinciples,
+  processSteps,
+  proofStats,
+  systems,
+  testimonials,
+} from '../data/siteContent';
+---
+
+<Layout
+  title="DevRocket - AI Software Engineering and Production AI Systems"
+  description="DevRocket designs and ships production AI systems, workflow automation, RAG knowledge systems, document processing, and full-stack AI products."
+>
+  <div class="home-container">
+    <Hero />
+
+    <section class="section-padding proof-section" aria-label="Selected outcomes">
+      <div class="content-container">
+        <StatRow stats={proofStats.slice(0, 6)} />
+      </div>
+    </section>
+
+    <section id="capabilities" class="section-padding">
+      <div class="content-container">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow">Capabilities</p>
+            <h2 class="section-title">AI systems with the software discipline around them</h2>
+          </div>
+          <p class="section-lead">
+            The work is not just model access. DevRocket designs the workflow, data path, user experience,
+            deployment, and feedback loop required for AI to create durable business value.
+          </p>
+        </div>
+        <CapabilityCards capabilities={capabilities} />
+
+        <div class="advisory-panel section-narrow">
+          <p class="eyebrow">Secondary offering</p>
+          <h3>Advisory and workshops</h3>
+          <p>
+            Teaching stays part of the practice, but no longer defines the brand. Workshops help teams build
+            shared language around AI architecture, RAG quality, evaluation, TypeScript foundations, and production delivery.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="systems" class="section-padding">
+      <div class="content-container">
+        <div class="section-heading">
+          <p class="eyebrow">Selected systems</p>
+          <h2 class="section-title">Public-safe examples of production AI work</h2>
+          <p class="section-lead">
+            Concise summaries of representative systems using the business outcomes available for public positioning.
+          </p>
+        </div>
+        <SystemCards systems={systems} />
+      </div>
+    </section>
+
+    <section id="process" class="section-padding">
+      <div class="content-container">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="eyebrow">Process</p>
+            <h2 class="section-title">From workflow ambiguity to production ownership</h2>
+          </div>
+          <p class="section-lead">
+            DevRocket keeps scope tight, ships representative slices, and hardens the system before it becomes operational debt.
+          </p>
+        </div>
+        <ProcessSteps steps={processSteps} />
+      </div>
+    </section>
+
+    <section id="about" class="section-padding">
+      <div class="content-container">
+        <FounderBio founder={founder} />
+
+        <div class="principle-grid section-offset">
+          {founderPrinciples.map((principle) => (
+            <article>
+              <h3>{principle.title}</h3>
+              <p>{principle.detail}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <Testimonials testimonials={testimonials} />
+
+    <ScheduleCall />
+  </div>
+</Layout>

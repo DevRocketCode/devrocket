@@ -1,0 +1,85 @@
+---
+const navigation = [
+  { name: 'Home', href: '#hero-area' },
+  { name: 'Capabilities', href: '#capabilities' },
+  { name: 'Systems', href: '#systems' },
+  { name: 'Process', href: '#process' },
+  { name: 'About', href: '#about' },
+  { name: 'Contact', href: '#contact' },
+];
+---
+
+<nav id="navbar" class="site-header" aria-label="Primary navigation">
+  <div class="site-header__inner">
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      data-menu-toggle
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <a class="brand" href="/" aria-label="DevRocket home">
+      <span class="brand__mark">
+        <img src="/img/about/dev-rocket-icon.png" alt="" />
+      </span>
+      <span class="brand__name">DevRocket</span>
+    </a>
+
+    <div class="site-nav">
+      {navigation.map((item) => (
+        <a href={item.href}>{item.name}</a>
+      ))}
+    </div>
+
+    <div class="site-actions">
+      <a class="social-button" href="https://www.linkedin.com/in/prestonwallace/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+      <a class="button button-outline-strong header-start" href="#contact">Get Started</a>
+    </div>
+  </div>
+
+  <div id="mobile-nav" class="mobile-nav" data-mobile-menu data-open="false">
+    <div class="content-container mobile-nav__inner">
+      {navigation.map((item) => (
+        <a href={item.href}>{item.name}</a>
+      ))}
+      <div class="mobile-nav__actions">
+        <a class="social-button" href="https://www.linkedin.com/in/prestonwallace/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        </a>
+        <a class="button button-outline-strong header-start" href="#contact">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
+
+  const setMenuOpen = (isOpen) => {
+    if (!menuToggle || !mobileMenu) return;
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.dataset.open = String(isOpen);
+    mobileMenu.dataset.open = String(isOpen);
+  };
+
+  menuToggle?.addEventListener('click', () => {
+    setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuOpen(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setMenuOpen(false);
+  });
+</script>

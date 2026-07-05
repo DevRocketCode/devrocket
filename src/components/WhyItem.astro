@@ -1,0 +1,22 @@
+---
+interface Props {
+  borderRadius?: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+}
+
+const { title, subtitle, description, icon } = Astro.props;
+---
+
+<article class="why-item">
+  <div class="icon">
+    <i class={`icon-${icon}`}></i>
+  </div>
+  <div class="why-content">
+    <h3>{title}</h3>
+    <h4>{subtitle}</h4>
+    <p>{description}</p>
+  </div>
+</article>

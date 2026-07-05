@@ -1,0 +1,43 @@
+---
+import { heroTestimonial } from '../data/siteContent';
+
+const stars = Array.from({ length: 5 });
+---
+
+<section id="hero-area" class="hero-section">
+  <div class="content-container hero-shell">
+    <div class="hero-copy">
+      <p class="eyebrow">AI software engineering practice</p>
+      <h1>
+        Production AI systems for
+        <span>operators</span>
+      </h1>
+      <p class="hero-tagline">
+        DevRocket designs and ships AI workflow automation, RAG knowledge systems,
+        document processing, and full-stack AI products that survive contact with production.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="button button-primary">Discuss a system <span aria-hidden="true">-&gt;</span></a>
+        <a href="#systems" class="button button-ghost">View systems <span aria-hidden="true">-&gt;</span></a>
+      </div>
+    </div>
+
+    <aside class="hero-panel hero-testimonial-card" aria-label="Client testimonial">
+      <img class="hero-testimonial__avatar" src={heroTestimonial.image} alt={heroTestimonial.name} />
+      <div class="testimonial-stars" aria-label="5 out of 5 rating">
+        {stars.map(() => <i class="fa fa-star" aria-hidden="true"></i>)}
+      </div>
+      <blockquote>{heroTestimonial.quote}</blockquote>
+      <div class="hero-testimonial__rule"></div>
+      <footer class="hero-testimonial__footer">
+        <strong>{heroTestimonial.name}</strong>
+        <span>{heroTestimonial.detail}</span>
+      </footer>
+    </aside>
+
+    <a class="scroll-cue" href="#capabilities" aria-label="Scroll to capabilities">
+      <span>Scroll</span>
+      <i class="icon-arrow-down"></i>
+    </a>
+  </div>
+</section>

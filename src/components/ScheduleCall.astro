@@ -1,0 +1,40 @@
+---
+interface Props {
+  primaryHref?: string;
+}
+
+const { primaryHref = 'https://calendly.com/prestonwallace/30min' } = Astro.props;
+---
+
+<section id="contact" class="section-padding schedule-section">
+  <div class="content-container">
+    <div class="schedule-card">
+      <div class="schedule-copy">
+        <p class="eyebrow">Schedule a call</p>
+        <h2 class="section-title">Let's work together</h2>
+        <p>
+          Curious how AI can improve a workflow, knowledge process, or product surface?
+          Send the context or schedule a focused architecture conversation.
+        </p>
+      </div>
+
+      <div class="schedule-side">
+        <a href={primaryHref} class="button button-outline-strong">
+          <i class="fa fa-calendar-o" aria-hidden="true"></i>
+          Schedule a call
+        </a>
+
+        <div class="schedule-links" aria-label="Contact links">
+          <a href="mailto:preston@devrocket.io">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/prestonwallace/" target="_blank" rel="noreferrer">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

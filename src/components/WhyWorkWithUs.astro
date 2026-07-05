@@ -1,0 +1,23 @@
+---
+import WhyItem from './WhyItem.astro';
+import { capabilities } from '../data/capabilities';
+---
+
+<section id="why-work-with-us" class="section-padding">
+  <div class="content-container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow">Why DevRocket</p>
+        <h2 class="section-title">Senior software delivery without the agency theater</h2>
+      </div>
+      <p class="section-lead">
+        Built for founders and operators who want direct access, practical tradeoffs, and a team small enough to stay accountable.
+      </p>
+    </div>
+    <div class="why-container capability-list">
+      {capabilities.map((capability) => (
+        <WhyItem {...capability} />
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+interface Props {
+  testimonial: {
+    name: string;
+    social: string;
+    quote: string;
+  };
+}
+
+const { testimonial } = Astro.props;
+---
+
+<article class="testimonials-item">
+  <div class="testimonials-meta">
+    <div class="testimonials-image">
+      <img
+        src={`/images/testimonials/${testimonial.social}.jpeg`}
+        alt={testimonial.name}
+        style={{
+          borderRadius: '100%',
+          width: '60px',
+          height: '60px',
+          objectFit: 'cover',
+        }}
+      />
+    </div>
+    <div class="testimonials-info">
+      <h3>{testimonial.name}</h3>
+      <a href={`https://www.linkedin.com/in/${testimonial.social}`} target="_blank" rel="noreferrer">{testimonial.social}</a>
+    </div>
+  </div>
+  <div class="testimonials-content">
+    <p>{testimonial.quote}</p>
+  </div>
+</article>

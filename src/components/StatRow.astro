@@ -1,0 +1,24 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+  detail?: string;
+}
+
+interface Props {
+  stats: Stat[];
+  compact?: boolean;
+}
+
+const { stats, compact = false } = Astro.props;
+---
+
+<div class:list={['proof-strip', compact && 'proof-strip--compact']}>
+  {stats.map((stat) => (
+    <article class="proof-stat">
+      <strong>{stat.value}</strong>
+      <span>{stat.label}</span>
+      {stat.detail && <p>{stat.detail}</p>}
+    </article>
+  ))}
+</div>

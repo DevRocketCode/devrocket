@@ -1,0 +1,79 @@
+---
+interface Testimonial {
+  name: string;
+  detail: string;
+  image: string;
+  socialUrl?: string;
+  quote: string;
+}
+
+interface Props {
+  testimonials: Testimonial[];
+}
+
+const { testimonials } = Astro.props;
+const stars = Array.from({ length: 5 });
+---
+
+<section id="testimonials" class="section-padding testimonials-section">
+  <div class="content-container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow">Testimonials</p>
+        <h2 class="section-title">Technical clarity people remember</h2>
+      </div>
+      <p class="section-lead">
+        DevRocket's teaching roots show up in the build process: clear explanations,
+        strong engineering judgment, and systems people can understand after launch.
+      </p>
+    </div>
+
+    <div class="testimonial-trust-strip" aria-label="Social proof summary">
+      <article>
+        <strong>{testimonials.length}</strong>
+        <span>engineering testimonials</span>
+      </article>
+      <article>
+        <strong>5/5</strong>
+        <span>technical clarity signal</span>
+      </article>
+      <article>
+        <strong>AI</strong>
+        <span>systems plus teaching depth</span>
+      </article>
+    </div>
+
+    <div class="testimonial-grid">
+      {testimonials.map((testimonial) => (
+        <article class="testimonial-card">
+          <div class="testimonial-card__top">
+            <div class="testimonial-stars" aria-label="5 out of 5 rating">
+              {stars.map(() => <i class="fa fa-star" aria-hidden="true"></i>)}
+            </div>
+            {testimonial.socialUrl && (
+              <a
+                class="testimonial-linkedin"
+                href={testimonial.socialUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${testimonial.name} on LinkedIn`}
+              >
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+              </a>
+            )}
+          </div>
+
+          <blockquote>{testimonial.quote}</blockquote>
+
+          <footer class="testimonial-card__footer">
+            <img src={testimonial.image} alt={testimonial.name} />
+            <div>
+              <strong>{testimonial.name}</strong>
+              <span>{testimonial.detail}</span>
+            </div>
+          </footer>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
