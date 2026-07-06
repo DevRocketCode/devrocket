@@ -3,6 +3,8 @@ interface Stat {
   value: string;
   label: string;
   detail?: string;
+  href?: string;
+  linkLabel?: string;
 }
 
 interface Props {
@@ -19,6 +21,11 @@ const { stats, compact = false } = Astro.props;
       <strong>{stat.value}</strong>
       <span>{stat.label}</span>
       {stat.detail && <p>{stat.detail}</p>}
+      {stat.href && (
+        <a class="proof-stat__link" href={stat.href}>
+          {stat.linkLabel ?? 'Read case study'} <span aria-hidden="true">-&gt;</span>
+        </a>
+      )}
     </article>
   ))}
 </div>
