@@ -1,231 +1,300 @@
+export const heroTestimonial = {
+  name: "Jean Leconte II",
+  detail: "Generative AI Engineer, AWS",
+  image: "/images/testimonials/jean-leconte-ii.jpeg",
+  socialUrl: "https://www.linkedin.com/in/jean-leconte-ii/",
+  quote:
+    "I've learned a ton from Preston and recommend if anyone reading this has the opportunity to work with him in any capacity they should take it!",
+}
+
 export const proofStats = [
   {
-    value: '40%',
-    label: 'revenue increase',
-    detail: 'AI-assisted revenue workflows turned scattered signals into timely action.',
+    value: "40%",
+    label: "revenue increase",
+    detail:
+      "Predictive budget-spend work turned campaign and revenue signals into timely action.",
+    href: "#predictive-budget-spend-system",
   },
   {
-    value: '85%',
-    label: 'time savings',
-    detail: 'Document-heavy operations moved from manual review to validated automation.',
+    value: "85%",
+    label: "time savings",
+    detail:
+      "AI instructor validation replaced repetitive access checks with real-time search and webhook automation.",
+    href: "#ai-instructor-validation",
   },
   {
-    value: '5,000',
-    label: 'hours saved per year',
-    detail: 'Repeat operational work was absorbed by production workflow systems.',
+    value: "5,000",
+    label: "hours saved per year",
+    detail:
+      "The same instructor validation system removed approximately 5,000 hours of manual work each year.",
+    href: "#ai-instructor-validation",
   },
   {
-    value: '$500K+',
-    label: 'annual efficiency gains',
-    detail: 'Automation outcomes were tied to measurable business value.',
+    value: "$500K+",
+    label: "annual efficiency gains",
+    detail:
+      "AI office-hours automation used OCR, APIs, and Salesforce integration to reduce manual operations.",
+    href: "#ai-office-hours-automation",
   },
   {
-    value: '90%',
-    label: 'API performance lift',
-    detail: 'Production hardening made AI product surfaces faster and more reliable.',
+    value: "90%",
+    label: "API performance improvement",
+    detail:
+      "Node and GraphQL API modernization made production product surfaces faster and more reliable.",
+    href: "#node-graphql-api-modernization",
   },
   {
-    value: '400%',
-    label: 'ROI',
-    detail: 'AI system investment returned measurable operational impact.',
+    value: "40%",
+    label: "CI/CD cycle reduction",
+    detail:
+      "Infrastructure and CI/CD work reduced test-build-deploy time for the engineering workflow.",
+    href: "#ci-cd-infrastructure-acceleration",
   },
-];
+]
 
 export const capabilities = [
   {
-    icon: 'fa-cogs',
-    title: 'AI workflow automation',
-    summary: 'Automate repeat workflows without losing review, context, or ownership.',
-    points: ['Workflow mapping', 'Human review', 'Outcome tracking'],
+    icon: "fa-cogs",
+    title: "Workflow automation",
+    summary:
+      "Automate high-friction operational work while keeping people in the right review points.",
+    points: ["Workflow design", "System integrations", "Review queues"],
   },
   {
-    icon: 'fa-database',
-    title: 'RAG and knowledge systems',
-    summary: 'Turn scattered expertise into grounded answers your team can trust.',
-    points: ['Retrieval pipelines', 'Vector search', 'Feedback loops'],
+    icon: "fa-database",
+    title: "Knowledge and RAG systems",
+    summary:
+      "Turn internal documents and scattered expertise into grounded answers with source context.",
+    points: ["Retrieval pipelines", "Vector search", "Answer evaluation"],
   },
   {
-    icon: 'fa-file-text-o',
-    title: 'Document processing',
-    summary: 'Extract, validate, and route the information trapped in business documents.',
-    points: ['Structured extraction', 'Validation queues', 'Audit trails'],
+    icon: "fa-file-text-o",
+    title: "Document AI",
+    summary:
+      "Extract, validate, and route information from documents into the systems where work happens.",
+    points: ["OCR workflows", "Structured extraction", "Exception handling"],
   },
   {
-    icon: 'fa-random',
-    title: 'Agentic systems',
-    summary: 'Build constrained agents that call tools, follow rules, and escalate safely.',
-    points: ['Tool orchestration', 'Guardrails', 'Fallback paths'],
+    icon: "fa-code",
+    title: "AI product features",
+    summary:
+      "Add AI features to real products with the UX, API, auth, and data layer they need.",
+    points: ["Product UX", "API design", "Launch scope"],
   },
   {
-    icon: 'fa-code',
-    title: 'Full-stack AI products',
-    summary: 'Ship the product layer around the model: UX, APIs, auth, data, and deploys.',
-    points: ['Product UX', 'API design', 'Cloud delivery'],
+    icon: "fa-random",
+    title: "Constrained agent workflows",
+    summary:
+      "Build tool-using agents with clear boundaries, fallback paths, and human approval.",
+    points: ["Tool orchestration", "Guardrails", "Escalation paths"],
   },
   {
-    icon: 'fa-shield',
-    title: 'Production hardening',
-    summary: 'Move prototypes into observable, tested, maintainable production systems.',
-    points: ['Performance', 'CI/CD', 'Observability'],
+    icon: "fa-shield",
+    title: "Production engineering",
+    summary:
+      "Make AI software reliable with evaluation, monitoring, deployment, security, and handoff.",
+    points: ["Evaluation", "CI/CD", "Observability"],
   },
-];
+]
 
 export const systems = [
   {
-    title: 'Revenue operations AI engine',
+    id: "predictive-budget-spend-system",
+    title: "Predictive budget-spend system",
     problem:
-      'Growth teams were acting on scattered campaign, account, and revenue signals without a clear operating layer.',
-    type: 'AI workflow automation and decision support',
-    architecture: 'Data pipelines, scoring logic, CRM workflows, review paths, and a full-stack operations dashboard.',
-    outcomes: ['40% revenue increase', 'about 15% faster campaign builds', 'about 15% churn reduction'],
+      "Campaign and revenue signals were spread across systems, making it harder to spot spend opportunities quickly.",
+    type: "Predictive operations workflow",
+    architecture:
+      "Data modeling, budget-spend prediction, workflow surfacing, and operational reporting.",
+    metric: "40% revenue lift",
+    outcomes: ["40% revenue increase", "fewer support tickets"],
     details: [
-      'Converted fragmented revenue inputs into prioritized actions for operators.',
-      'Kept decisions reviewable so the team could trust the recommendations before acting.',
+      "Connected operational and revenue signals to help teams act earlier on budget-spend patterns.",
+      "Kept the outcome tied to business movement rather than a standalone AI demo.",
     ],
   },
   {
-    title: 'Document processing automation',
+    id: "llm-contact-discovery",
+    title: "LLM contact discovery",
     problem:
-      'Manual document review was consuming high-value team hours and delaying operational throughput.',
-    type: 'Document AI and workflow automation',
-    architecture: 'Extraction pipeline, validation queues, API orchestration, audit trails, and review tooling.',
-    outcomes: ['85% time savings', 'about 5,000 hours per year saved', '$500K+ annual efficiency gains'],
+      "Sales teams needed a faster way to identify and enrich prospects from public web data.",
+    type: "LLM-powered prospecting pipeline",
+    architecture:
+      "Full-stack scraping pipeline with LLM extraction, enrichment workflow, review states, and application UI.",
+    metric: "Prospecting pipeline",
+    outcomes: ["Prospect discovery and enrichment pipeline"],
     details: [
-      'Replaced repetitive review steps with structured extraction and exception handling.',
-      'Designed the workflow so humans focused on ambiguous cases instead of routine processing.',
+      "Built a workflow that found, extracted, and enriched contact data for sales prospecting.",
+      "Kept the system scoped around repeatable discovery work instead of broad, unbounded automation.",
     ],
   },
   {
-    title: 'RAG knowledge system',
+    id: "ai-instructor-validation",
+    title: "AI instructor validation",
     problem:
-      'Critical knowledge lived across documents, systems, and expert memory, slowing operational decisions.',
-    type: 'RAG and knowledge assistant',
-    architecture: 'Retrieval pipelines, vector search, grounded answer UI, citations, and feedback instrumentation.',
-    outcomes: ['400% ROI', 'faster access to trusted operational knowledge'],
+      "Manual instructor validation and access checks created delays and repetitive operational work.",
+    type: "Real-time validation and access control",
+    architecture:
+      "Search workflow, webhook integration, validation logic, access control, and operational handoff.",
+    metric: "85% time savings",
+    outcomes: ["85% time savings", "approximately 5,000 hours per year saved"],
     details: [
-      'Built a knowledge access layer that connected answers back to source material.',
-      'Added feedback instrumentation so retrieval quality could improve after launch.',
+      "Built real-time search and webhook automation for validation decisions.",
+      "Reduced manual validation work while keeping access control decisions explicit.",
     ],
   },
   {
-    title: 'Production AI platform hardening',
+    id: "ai-office-hours-automation",
+    title: "AI office-hours automation",
     problem:
-      'An AI product needed faster APIs, safer release paths, and better developer throughput.',
-    type: 'API modernization and platform automation',
-    architecture: 'Service architecture, observability, CI/CD automation, and performance tuning.',
-    outcomes: ['90% API performance improvement', '40% CI/CD reduction', 'doubled developer velocity'],
+      "Office-hours workflows depended on repetitive document review and manual Salesforce updates.",
+    type: "OCR and API workflow automation",
+    architecture:
+      "OCR processing, API orchestration, Salesforce integration, validation steps, and operational reporting.",
+    metric: "$500K+ gains",
+    outcomes: ["$500K+ in annual efficiency gains"],
     details: [
-      'Improved the engineering system around the AI surface, not just the model interaction.',
-      'Reduced release friction while making the product faster and easier to evolve.',
+      "Built an OCR and API workflow that moved information into Salesforce.",
+      "Focused automation on the repeated operational steps that created the largest time drain.",
     ],
   },
-];
+  {
+    id: "production-document-chat",
+    title: "Production document chat",
+    problem:
+      "Users needed a reliable way to ask questions across data and documents in a production environment.",
+    type: "AI chat platform for data and document access",
+    architecture:
+      "Document chat application, data access layer, EC2 infrastructure ownership, deployment, and production support.",
+    metric: "$24K ARR",
+    outcomes: ["$24K ARR"],
+    details: [
+      "Deployed an AI chat platform for document and data access.",
+      "Owned the EC2 infrastructure required to keep the product running in production.",
+    ],
+  },
+  {
+    id: "ai-rag-campaign-workflow",
+    title: "AI/RAG campaign workflow",
+    problem:
+      "Campaign build work was slowed by repeated research, scattered context, and handoffs.",
+    type: "RAG and workflow acceleration",
+    architecture:
+      "Retrieval workflows, campaign context, application integration, and human review loops.",
+    metric: "~15% faster builds",
+    outcomes: [
+      "approximately 15% reduction in campaign build time",
+      "approximately 15% churn reduction",
+    ],
+    details: [
+      "Used retrieval and workflow design to shorten campaign build cycles.",
+      "Kept campaign context available where operators were already doing the work.",
+    ],
+  },
+  {
+    id: "node-graphql-api-modernization",
+    title: "Node and GraphQL API modernization",
+    problem:
+      "Production APIs needed to handle product demand with lower latency and more predictable behavior.",
+    type: "Backend performance engineering",
+    architecture:
+      "Node services, GraphQL APIs, performance tuning, query optimization, and production monitoring.",
+    metric: "up to 90% faster APIs",
+    outcomes: ["up to 90% API performance improvement"],
+    details: [
+      "Improved the backend systems that product and AI-facing workflows depended on.",
+      "Focused the work on measurable response-time improvements and operational reliability.",
+    ],
+  },
+  {
+    id: "ci-cd-infrastructure-acceleration",
+    title: "CI/CD infrastructure acceleration",
+    problem:
+      "The engineering workflow was slowed by long test, build, and deploy cycles.",
+    type: "Infrastructure and delivery automation",
+    architecture:
+      "CI/CD pipeline optimization, infrastructure automation, build tuning, and release workflow cleanup.",
+    metric: "40% faster CI/CD",
+    outcomes: ["40% reduction in test-build-deploy time"],
+    details: [
+      "Reduced delivery friction so production work could move faster with less waiting.",
+      "Kept the improvement tied to the software delivery system rather than a single feature.",
+    ],
+  },
+]
 
 export const processSteps = [
   {
-    title: 'Find the workflow edge',
-    detail: 'Map the work, the data, the human decisions, and the places where AI can safely remove drag.',
+    title: "Validate the opportunity",
+    detail:
+      "Identify the workflow, data, risks, users, and measurable outcome.",
   },
   {
-    title: 'Design the system boundary',
-    detail: 'Choose the right mix of retrieval, agents, rules, review queues, APIs, and product UX.',
+    title: "Build the working version",
+    detail:
+      "Ship a small end-to-end system using representative data and real integrations.",
   },
   {
-    title: 'Build a representative slice',
-    detail: 'Ship the smallest end-to-end system that proves the workflow, not a throwaway demo.',
+    title: "Launch and improve",
+    detail:
+      "Add evaluations, guardrails, monitoring, security, documentation, and deployment.",
   },
-  {
-    title: 'Harden for production',
-    detail: 'Add observability, evaluation, error handling, security, testing, and deployment discipline.',
-  },
-  {
-    title: 'Measure and iterate',
-    detail: 'Track business outcomes, tighten prompts and retrieval, and improve the software around the AI.',
-  },
-];
+]
 
 export const founderPrinciples = [
   {
-    title: 'AI systems track record',
-    detail: 'Workflow automation, RAG, document processing, and production hardening tied to revenue, efficiency, and velocity metrics.',
+    title: "AI plus product engineering",
+    detail:
+      "AI work is connected to product UX, APIs, data, and the operational workflow around it.",
   },
   {
-    title: 'Architecture plus implementation',
-    detail: 'Product UX, APIs, cloud delivery, data paths, and operational constraints are designed together instead of handed between teams.',
+    title: "End-to-end ownership",
+    detail:
+      "Architecture, implementation, deployment, documentation, and handoff stay with one senior engineer.",
   },
   {
-    title: 'Teaching clarity',
-    detail: 'The workshop background helps teams understand what was built, why it works, and how to own it after launch.',
+    title: "Clear communication",
+    detail:
+      "You get plain-language tradeoffs, practical scope, and documentation your team can use after launch.",
   },
-];
+]
 
 export const founder = {
-  name: 'Preston Wallace',
-  role: 'Founder and AI software engineer',
-  image: '/images/headshot.jpg',
+  name: "Preston Wallace",
+  role: "Founder and AI software engineer",
+  headline: "Work directly with the builder.",
+  image: "/images/headshot.jpg",
   summary:
-    'DevRocket is led by Preston Wallace, a full-stack engineer who brings AI systems work, architecture judgment, and teaching clarity into production software delivery.',
+    "DevRocket is led by Preston Wallace, a senior full-stack engineer working across AI, product, backend systems, data, and cloud infrastructure.",
   paragraphs: [
-    'The practice sits at the intersection of workflow automation, applied AI, and product engineering. That means the work is not just prompt experiments or disconnected model calls. It is the software around the AI: data paths, interfaces, reviews, deployment, observability, and measurable outcomes.',
-    'Preston also brings a teaching and workshop background, which shows up as clear communication, shared mental models, and documentation that helps teams own what ships. Advisory and workshops are available as secondary offerings when a team needs alignment before or after a build.',
+    "Clients work directly with the engineer responsible for architecture, implementation, deployment, and handoff.",
+    "His experience includes production LLM systems, RAG pipelines, agents, React and Next.js applications, Node and Python services, PostgreSQL, AWS, GCP, Docker, Kubernetes, and CI/CD.",
   ],
-};
-
-export const heroTestimonial = {
-    name: 'Jean Leconte II',
-    detail: 'Generative AI Engineer, AWS',
-    image: '/images/testimonials/jean-leconte-ii.jpeg',
-    socialUrl: 'https://www.linkedin.com/in/jean-leconte-ii/',
-    quote:
-      "I've learned a ton from Preston and recommend if anyone reading this has the opportunity to work with him in any capacity they should take it!",
-  };
+}
 
 export const testimonials = [
   {
-    name: 'Jean Leconte II',
-    detail: 'Generative AI Engineer, AWS',
-    image: '/images/testimonials/jean-leconte-ii.jpeg',
-    socialUrl: 'https://www.linkedin.com/in/jean-leconte-ii/',
+    name: "Jean Leconte II",
+    detail: "Generative AI Engineer, AWS",
+    image: "/images/testimonials/jean-leconte-ii.jpeg",
+    socialUrl: "https://www.linkedin.com/in/jean-leconte-ii/",
     quote:
       "I've learned a ton from Preston and recommend if anyone reading this has the opportunity to work with him in any capacity they should take it!",
   },
   {
-    name: 'Justin Cook',
-    detail: 'Software Engineer',
-    image: '/images/testimonials/justin-cook-developer.jpeg',
-    socialUrl: 'https://www.linkedin.com/in/justin-cook-developer/',
-    quote: "I've learned a ton from Preston and recommend if anyone reading this has the opportunity to work with him in any capacity they should take it!",
+    name: "Bienvenido Rodriguez",
+    detail: "AI Platform, Coinbase",
+    image: "/images/testimonials/b17z.jpeg",
+    socialUrl: "https://www.linkedin.com/in/b17z/",
+    quote:
+      "Preston is a gifted Software Engineer and a thought leader in technical education, training, and communication.",
   },
   {
-    name: 'Yahya Hafez',
-    detail: 'Software engineer',
-    image: '/images/testimonials/yahya-hafez.jpeg',
-    socialUrl: 'https://www.linkedin.com/in/yahya-hafez/',
+    name: "Yahya Hafez",
+    detail: "Senior Software Engineer",
+    image: "/images/testimonials/yahya-hafez.jpeg",
+    socialUrl: "https://www.linkedin.com/in/yahya-hafez/",
     quote:
       "Preston's impressive experience and skill as a developer was consistently highlighted through the deep knowledge of web development he shared.",
   },
-  {
-    name: 'Bienvenido Rodriguez',
-    detail: 'Software engineer',
-    image: '/images/testimonials/b17z.jpeg',
-    socialUrl: 'https://www.linkedin.com/in/b17z/',
-    quote:
-      'Preston is a gifted Software Engineer and a thought leader in technical education, training, and communication.',
-  },
-  {
-    name: 'Hugo Campos',
-    detail: 'Developer',
-    image: '/images/testimonials/o6nh.jpeg',
-    socialUrl: 'https://www.linkedin.com/in/o6nh/',
-    quote:
-      "I am continuously impressed by Preston's ability to convince newer coders to keep soldiering on. He provides a positive energy that tends to boost morale.",
-  },
-  {
-    name: 'Sal Guerrero',
-    detail: 'Software engineer',
-    image: '/images/testimonials/sal-guerrero.jpeg',
-    socialUrl: 'https://www.linkedin.com/in/sal-guerrero/',
-    quote:
-      'Preston helped me understand critical programming concepts and further my programming skills. As a result of his teaching I was able to break into tech and find the career of my dreams.',
-  },
-];
+]

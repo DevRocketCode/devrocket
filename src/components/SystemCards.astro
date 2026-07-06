@@ -1,9 +1,11 @@
 ---
 interface SystemCard {
+  id?: string;
   title: string;
   problem: string;
   type: string;
   architecture: string;
+  metric?: string;
   outcomes: string[];
   details?: string[];
 }
@@ -17,7 +19,12 @@ const { systems } = Astro.props;
 
 <div class="system-accordion" data-system-accordion>
   {systems.map((system, index) => (
-    <article class="system-accordion__item" data-accordion-item data-open="false">
+    <article
+      id={system.id ?? `system-${index + 1}`}
+      class="system-accordion__item"
+      data-accordion-item
+      data-open="false"
+    >
       <button
         class="system-accordion__summary"
         type="button"
@@ -30,7 +37,7 @@ const { systems } = Astro.props;
           <span>{system.type}</span>
           <strong>{system.title}</strong>
         </span>
-        <span class="system-accordion__metric">{system.outcomes[0]}</span>
+        <span class="system-accordion__metric">{system.metric ?? system.outcomes[0]}</span>
         <i class="fa fa-angle-down" aria-hidden="true"></i>
       </button>
 
@@ -73,18 +80,40 @@ const { systems } = Astro.props;
 
 <script is:inline>
   document.querySelectorAll('[data-system-accordion]').forEach((accordion) => {
+    const setItemOpen = (item, isOpen) => {
+      const trigger = item?.querySelector('[data-accordion-trigger]');
+      const body = item?.querySelector('[data-accordion-body]');
+
+      if (!item || !trigger || !body) return;
+
+      item.dataset.open = String(isOpen);
+      trigger.setAttribute('aria-expanded', String(isOpen));
+      body.setAttribute('aria-hidden', String(!isOpen));
+    };
+
     accordion.querySelectorAll('[data-accordion-trigger]').forEach((trigger) => {
       trigger.addEventListener('click', () => {
         const item = trigger.closest('[data-accordion-item]');
-        const body = item?.querySelector('[data-accordion-body]');
         const isOpen = item?.dataset.open === 'true';
 
-        if (!item || !body) return;
+        if (!item) return;
 
-        item.dataset.open = String(!isOpen);
-        trigger.setAttribute('aria-expanded', String(!isOpen));
-        body.setAttribute('aria-hidden', String(isOpen));
+        setItemOpen(item, !isOpen);
       });
     });
+
+    const openHashTarget = () => {
+      if (!window.location.hash) return;
+
+      const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+      const item = target?.matches('[data-accordion-item]')
+        ? target
+        : target?.closest('[data-accordion-item]');
+
+      if (item) setItemOpen(item, true);
+    };
+
+    window.addEventListener('hashchange', openHashTarget);
+    openHashTarget();
   });
 </script>

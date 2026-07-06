@@ -1,16 +1,30 @@
 ---
 const navigation = [
-  { name: 'Home', href: '#hero-area' },
-  { name: 'Capabilities', href: '#capabilities' },
-  { name: 'Systems', href: '#systems' },
+  { name: 'Services', href: '#capabilities' },
+  { name: 'Work', href: '#systems' },
   { name: 'Process', href: '#process' },
   { name: 'About', href: '#about' },
   { name: 'Contact', href: '#contact' },
 ];
 ---
 
-<nav id="navbar" class="site-header" aria-label="Primary navigation">
+<nav id="navbar" class="site-header" aria-label="Primary navigation" data-site-header>
   <div class="site-header__inner">
+    <a class="brand brand--desktop" href="/" aria-label="DevRocket home">
+      <span class="brand__mark">
+        <img src="/img/about/dev-rocket-icon.png" alt="" />
+      </span>
+      <span class="brand__name">DevRocket</span>
+    </a>
+
+    <a class="brand-mark-mobile" href="/" aria-label="DevRocket home">
+      <span class="brand__mark">
+        <img src="/img/about/dev-rocket-icon.png" alt="" />
+      </span>
+    </a>
+
+    <a class="brand-name-mobile" href="/" aria-label="DevRocket home">DevRocket</a>
+
     <button
       class="menu-toggle"
       type="button"
@@ -24,13 +38,6 @@ const navigation = [
       <span></span>
     </button>
 
-    <a class="brand" href="/" aria-label="DevRocket home">
-      <span class="brand__mark">
-        <img src="/img/about/dev-rocket-icon.png" alt="" />
-      </span>
-      <span class="brand__name">DevRocket</span>
-    </a>
-
     <div class="site-nav">
       {navigation.map((item) => (
         <a href={item.href}>{item.name}</a>
@@ -41,7 +48,7 @@ const navigation = [
       <a class="social-button" href="https://www.linkedin.com/in/prestonwallace/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
         <i class="fa fa-linkedin-square" aria-hidden="true"></i>
       </a>
-      <a class="button button-outline-strong header-start" href="#contact">Get Started</a>
+      <a class="button button-outline-strong header-start" href="#contact">Discuss your project</a>
     </div>
   </div>
 
@@ -54,22 +61,32 @@ const navigation = [
         <a class="social-button" href="https://www.linkedin.com/in/prestonwallace/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
           <i class="fa fa-linkedin-square" aria-hidden="true"></i>
         </a>
-        <a class="button button-outline-strong header-start" href="#contact">Get Started</a>
+        <a class="button button-outline-strong header-start" href="#contact">Discuss your project</a>
       </div>
     </div>
   </div>
 </nav>
 
 <script is:inline>
+  const navbar = document.querySelector('[data-site-header]') ?? document.querySelector('#navbar');
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const mobileMenu = document.querySelector('[data-mobile-menu]');
+
+  const setHeaderScrolled = () => {
+    if (!navbar) return;
+    navbar.dataset.scrolled = String(window.scrollY > 8);
+  };
 
   const setMenuOpen = (isOpen) => {
     if (!menuToggle || !mobileMenu) return;
     menuToggle.setAttribute('aria-expanded', String(isOpen));
     menuToggle.dataset.open = String(isOpen);
     mobileMenu.dataset.open = String(isOpen);
+    if (navbar) navbar.dataset.menuOpen = String(isOpen);
   };
+
+  setHeaderScrolled();
+  window.addEventListener('scroll', setHeaderScrolled, { passive: true });
 
   menuToggle?.addEventListener('click', () => {
     setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');

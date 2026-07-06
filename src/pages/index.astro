@@ -20,15 +20,23 @@ import {
 ---
 
 <Layout
-  title="DevRocket - AI Software Engineering and Production AI Systems"
-  description="DevRocket designs and ships production AI systems, workflow automation, RAG knowledge systems, document processing, and full-stack AI products."
+  title="DevRocket | AI Software Engineering & Workflow Automation"
+  description="Founder-led AI development for workflow automation, document processing, knowledge systems, agent workflows, and production AI products."
 >
   <div class="home-container">
     <Hero />
 
-    <section class="section-padding proof-section" aria-label="Selected outcomes">
+    <section class="section-padding proof-section" aria-label="Real-world examples">
       <div class="content-container">
-        <StatRow stats={proofStats.slice(0, 6)} />
+        <div class="section-heading">
+          <p class="eyebrow">Resume-backed outcomes</p>
+          <h2 class="section-title">Real-world examples</h2>
+          <p class="section-lead">
+            Resume-backed examples from prior engineering work. Each metric links to the project
+            context below so the result stays attached to the system that produced it.
+          </p>
+        </div>
+        <StatRow stats={proofStats} />
       </div>
     </section>
 
@@ -36,22 +44,22 @@ import {
       <div class="content-container">
         <div class="section-heading section-heading--split">
           <div>
-            <p class="eyebrow">Capabilities</p>
-            <h2 class="section-title">AI systems with the software discipline around them</h2>
+            <p class="eyebrow">What DevRocket builds</p>
+            <h2 class="section-title">AI systems for real workflows.</h2>
           </div>
           <p class="section-lead">
-            The work is not just model access. DevRocket designs the workflow, data path, user experience,
-            deployment, and feedback loop required for AI to create durable business value.
+            DevRocket builds the model integration and the software around it, from user experience
+            and APIs to data, deployment, and evaluation.
           </p>
         </div>
         <CapabilityCards capabilities={capabilities} />
 
         <div class="advisory-panel section-narrow">
           <p class="eyebrow">Secondary offering</p>
-          <h3>Advisory and workshops</h3>
+          <h3>Advisory and team enablement</h3>
           <p>
-            Teaching stays part of the practice, but no longer defines the brand. Workshops help teams build
-            shared language around AI architecture, RAG quality, evaluation, TypeScript foundations, and production delivery.
+            Advisory and workshops are available when a team needs alignment on AI architecture,
+            workflow design, RAG quality, evaluation, or production delivery before or after a build.
           </p>
         </div>
       </div>
@@ -60,10 +68,11 @@ import {
     <section id="systems" class="section-padding">
       <div class="content-container">
         <div class="section-heading">
-          <p class="eyebrow">Selected systems</p>
-          <h2 class="section-title">Public-safe examples of production AI work</h2>
+          <p class="eyebrow">Selected work</p>
+          <h2 class="section-title">AI systems shipped into production.</h2>
           <p class="section-lead">
-            Concise summaries of representative systems using the business outcomes available for public positioning.
+            Representative examples from Preston's prior engineering work. Details are limited where
+            client and employer work is confidential.
           </p>
         </div>
         <SystemCards systems={systems} />
@@ -74,11 +83,12 @@ import {
       <div class="content-container">
         <div class="section-heading section-heading--split">
           <div>
-            <p class="eyebrow">Process</p>
-            <h2 class="section-title">From workflow ambiguity to production ownership</h2>
+            <p class="eyebrow">How it works</p>
+            <h2 class="section-title">A direct path to production.</h2>
           </div>
           <p class="section-lead">
-            DevRocket keeps scope tight, ships representative slices, and hardens the system before it becomes operational debt.
+            Start with the workflow and measurable outcome, then ship the smallest useful version
+            before hardening it for real users.
           </p>
         </div>
         <ProcessSteps steps={processSteps} />

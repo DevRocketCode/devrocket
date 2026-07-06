@@ -28,6 +28,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 88px;
   background: var(--bg);
 }
 
@@ -90,13 +91,28 @@ main {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 50;
   isolation: isolate;
   height: var(--header-height);
-  border-bottom: 1px solid var(--line);
-  background: rgba(5, 6, 10, 0.9);
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  backdrop-filter: none;
+  transition:
+    height 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    backdrop-filter 180ms ease;
+}
+
+.site-header[data-scrolled="true"],
+.site-header[data-menu-open="true"] {
+  height: 62px;
+  border-bottom-color: var(--line);
+  background: rgba(5, 6, 10, 0.94);
   backdrop-filter: blur(18px);
 }
 
@@ -228,6 +244,11 @@ main {
   font-weight: 800;
 }
 
+.brand-mark-mobile,
+.brand-name-mobile {
+  display: none;
+}
+
 .brand__mark {
   width: 36px;
   height: 36px;
@@ -312,7 +333,7 @@ main {
 .hero-section {
   position: relative;
   overflow: hidden;
-  min-height: calc(100vh - var(--header-height));
+  min-height: 100vh;
   border-bottom: 0;
   background:
     radial-gradient(circle at 18% 18%, rgba(29, 249, 248, 0.22), transparent 34%),
@@ -345,12 +366,12 @@ main {
 .hero-shell {
   position: relative;
   z-index: 1;
-  min-height: calc(100vh - var(--header-height));
+  min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 420px;
   align-items: center;
   gap: 72px;
-  padding: 86px 0 112px;
+  padding: calc(var(--header-height) + 70px) 0 112px;
 }
 
 .hero-copy {
@@ -1149,6 +1170,21 @@ h1 span {
   line-height: 1.55;
 }
 
+.proof-stat__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 850;
+}
+
+.proof-stat__link:hover,
+.proof-stat__link:focus-visible {
+  color: var(--text);
+}
+
 .capability-grid,
 .system-grid,
 .principle-grid {
@@ -1160,9 +1196,12 @@ h1 span {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.system-grid,
-.principle-grid {
+.system-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.principle-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .capability-card,
@@ -1257,8 +1296,10 @@ h1 span {
 .outcome-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 10px;
   margin-top: 24px;
+  padding: 0;
   list-style: none;
 }
 
@@ -1372,7 +1413,10 @@ h1 span {
 }
 
 .system-accordion__metric {
+  max-width: 100%;
+  min-width: 0;
   justify-self: end;
+  overflow: hidden;
   border: 1px solid rgba(29, 249, 248, 0.32);
   border-radius: 999px;
   padding: 8px 13px;
@@ -1380,6 +1424,7 @@ h1 span {
   color: var(--muted-strong);
   font-size: 0.9rem;
   font-weight: 800;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
@@ -1783,7 +1828,7 @@ h1 span {
     grid-template-columns: 1fr;
     gap: 44px;
     align-items: end;
-    padding-top: 72px;
+    padding-top: calc(var(--header-height) + 48px);
   }
 
   h1 {
@@ -1844,14 +1889,37 @@ h1 span {
     --header-height: 68px;
   }
 
+  .site-header[data-scrolled="true"],
+  .site-header[data-menu-open="true"] {
+    height: 58px;
+  }
+
   .content-container,
   .site-header__inner {
     width: min(100% - 32px, var(--max-content));
   }
 
   .site-header__inner {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
     gap: 14px;
+  }
+
+  .brand--desktop {
+    display: none;
+  }
+
+  .brand-mark-mobile {
+    display: grid;
+    justify-self: start;
+  }
+
+  .brand-name-mobile {
+    display: block;
+    justify-self: center;
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 900;
+    white-space: nowrap;
   }
 
   .site-nav {
@@ -1859,15 +1927,17 @@ h1 span {
   }
 
   .menu-toggle {
+    grid-column: 3;
+    grid-row: 1;
     display: inline-flex;
+    justify-self: end;
   }
 
-  .brand {
-    justify-self: center;
-  }
-
-  .brand__name {
-    font-size: 1rem;
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
   }
 
   .site-actions {
@@ -1875,8 +1945,10 @@ h1 span {
   }
 
   .hero-shell {
-    min-height: calc(100vh - var(--header-height));
-    padding: 60px 0 104px;
+    min-height: auto;
+    align-items: start;
+    gap: 34px;
+    padding: calc(var(--header-height) + 30px) 0 104px;
   }
 
   h1 {
@@ -1889,6 +1961,7 @@ h1 span {
 
   .hero-panel {
     padding: 22px;
+    max-width: 100%;
   }
 
   .hero-stats div {
