@@ -297,4 +297,20 @@ export const testimonials = [
     quote:
       "Preston's impressive experience and skill as a developer was consistently highlighted through the deep knowledge of web development he shared.",
   },
+  {
+    name: "Tiffany Heath",
+    detail: "Business Development Manager",
+    image: "/images/testimonials/tiffany-heath.png",
+    socialUrl: "https://www.linkedin.com/in/tiffaniheath/",
+    quote:
+      "Preston built our organization's website completely from scratch. Whenever revisions were needed — and there were many — he responded quickly and was always incredibly helpful. He was happy to jump on Zoom calls to walk through options or help troubleshoot issues. He also took the time to patiently explain the backend functions in a way that was easy for a non-technical person to understand.",
+  },
+  {
+    name: "Remy Sabiani",
+    detail: "Founder, WinePulse",
+    image: "/images/testimonials/remy-sabiani.png",
+    socialUrl: "https://www.linkedin.com/in/remy-sabiani/",
+    quote:
+      "Preston was instrumental in helping us build ChatDTC, our custom-tailored AI chat solution. He quickly understood our product and business needs, brought strong technical execution, and helped us move fast under tight deadlines.",
+  },
 ]

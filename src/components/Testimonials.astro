@@ -2,7 +2,7 @@
 interface Testimonial {
   name: string;
   detail: string;
-  image: string;
+  image?: string;
   socialUrl?: string;
   quote: string;
 }
@@ -12,6 +12,15 @@ interface Props {
 }
 
 const { testimonials } = Astro.props;
+const testimonialGroups = testimonials.length > 3 ? [testimonials, testimonials] : [testimonials];
+const getInitials = (name: string) =>
+  name
+    .split(" ")
+    .filter(Boolean)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 ---
 
 <section id="testimonials" class="section-padding testimonials-section">
@@ -27,34 +36,55 @@ const { testimonials } = Astro.props;
       </p>
     </div>
 
-    <div class="testimonial-grid">
-      {testimonials.map((testimonial) => (
-        <article class="testimonial-card">
-          <div class="testimonial-card__top">
-            {testimonial.socialUrl && (
-              <a
-                class="testimonial-linkedin"
-                href={testimonial.socialUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${testimonial.name} on LinkedIn`}
-              >
-                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-              </a>
-            )}
-          </div>
+    <div class:list={["testimonial-carousel", { "testimonial-carousel--static": testimonials.length <= 3 }]}>
+      <div class="testimonial-carousel__track">
+        {testimonialGroups.map((testimonialGroup, groupIndex) => {
+          const isClone = groupIndex > 0;
 
-          <blockquote>{testimonial.quote}</blockquote>
+          return (
+            <div class="testimonial-carousel__group" aria-hidden={isClone ? "true" : undefined}>
+              {testimonialGroup.map((testimonial) => (
+                <article class="testimonial-card">
+                  <div class="testimonial-card__top">
+                    {testimonial.socialUrl && (
+                      <a
+                        class="testimonial-linkedin"
+                        href={testimonial.socialUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${testimonial.name} on LinkedIn`}
+                        tabindex={isClone ? -1 : undefined}
+                      >
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                      </a>
+                    )}
+                  </div>
 
-          <footer class="testimonial-card__footer">
-            <img src={testimonial.image} alt={testimonial.name} />
-            <div>
-              <strong>{testimonial.name}</strong>
-              <span>{testimonial.detail}</span>
+                  <blockquote>{testimonial.quote}</blockquote>
+
+                  <footer class="testimonial-card__footer">
+                    {testimonial.image ? (
+                      <img
+                        class="testimonial-card__avatar"
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                      />
+                    ) : (
+                      <span class="testimonial-card__initials" aria-hidden="true">
+                        {getInitials(testimonial.name)}
+                      </span>
+                    )}
+                    <div>
+                      <strong>{testimonial.name}</strong>
+                      <span>{testimonial.detail}</span>
+                    </div>
+                  </footer>
+                </article>
+              ))}
             </div>
-          </footer>
-        </article>
-      ))}
+          );
+        })}
+      </div>
     </div>
   </div>
 </section>
