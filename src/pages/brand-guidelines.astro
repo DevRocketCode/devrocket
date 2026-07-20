@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="DevRocket Brand Guidelines"
+  description="DevRocket's official color and typography guidelines."
+>
+  <div class="print-controls" aria-label="Document controls">
+    <span>DevRocket Brand Guidelines</span>
+    <button type="button" data-print>Print / Save PDF</button>
+  </div>
+
+  <main class="brand-guide">
+    <section class="sheet sheet--cover" aria-labelledby="cover-title">
+      <div class="orbit orbit--one"></div>
+      <div class="orbit orbit--two"></div>
+      <img class="cover-logo" src="/img/about/dev-rocket-white-on-black.svg" alt="DevRocket" />
+      <div class="cover-copy">
+        <p class="eyebrow"><span></span> Welcome to our</p>
+        <h1 id="cover-title">Brand<br />Guidelines</h1>
+        <div class="cover-year"><span></span> 2026</div>
+      </div>
+      <p class="folio folio--light">DevRocket Brand Guidelines</p>
+      <p class="version version--light">V1.0 · July 2026</p>
+    </section>
+
+    <section class="sheet sheet--light" aria-labelledby="colors-title">
+      <header class="sheet-header">
+        <img src="/img/about/dev-rocket-logo-no-tagline.svg" alt="DevRocket" />
+        <p>Color system</p>
+        <span>01</span>
+      </header>
+
+      <div class="section-intro">
+        <p class="section-number">Section 01</p>
+        <h2 id="colors-title">Color palette</h2>
+        <p>Color is the ignition point of the DevRocket identity. Cyan and teal carry the energy; gold adds a precise, human accent.</p>
+      </div>
+
+      <div class="palette" aria-label="DevRocket color palette">
+        <article class="swatch swatch--cyan">
+          <h3>Electric Cyan</h3>
+          <dl><div><dt>HEX</dt><dd>#1DF9F8</dd></div><div><dt>RGB</dt><dd>29 · 249 · 248</dd></div></dl>
+        </article>
+        <article class="swatch swatch--teal">
+          <h3>Rocket Teal</h3>
+          <dl><div><dt>HEX</dt><dd>#19C4BD</dd></div><div><dt>RGB</dt><dd>25 · 196 · 189</dd></div></dl>
+        </article>
+        <article class="swatch swatch--deep">
+          <h3>Deep Teal</h3>
+          <dl><div><dt>HEX</dt><dd>#147E6D</dd></div><div><dt>RGB</dt><dd>20 · 126 · 109</dd></div></dl>
+        </article>
+        <article class="swatch swatch--gold">
+          <h3>Warm Gold</h3>
+          <dl><div><dt>HEX</dt><dd>#F1C36D</dd></div><div><dt>RGB</dt><dd>241 · 195 · 109</dd></div></dl>
+        </article>
+        <article class="swatch swatch--black">
+          <h3>Black</h3>
+          <dl><div><dt>HEX</dt><dd>#000000</dd></div><div><dt>RGB</dt><dd>0 · 0 · 0</dd></div></dl>
+        </article>
+        <article class="swatch swatch--white">
+          <h3>White</h3>
+          <dl><div><dt>HEX</dt><dd>#FFFFFF</dd></div><div><dt>RGB</dt><dd>255 · 255 · 255</dd></div></dl>
+        </article>
+      </div>
+
+      <p class="folio">DevRocket Brand Guidelines</p>
+      <p class="version">V1.0 · July 2026</p>
+    </section>
+
+    <section class="sheet sheet--dark" aria-labelledby="type-title">
+      <header class="sheet-header sheet-header--dark">
+        <img src="/img/about/dev-rocket-white-on-black.svg" alt="DevRocket" />
+        <p>Type system</p>
+        <span>02</span>
+      </header>
+
+      <div class="section-intro section-intro--dark">
+        <p class="section-number">Section 02</p>
+        <h2 id="type-title">Inter</h2>
+        <p>A modern sans-serif engineered for screens. Clear, direct, and precise across websites, proposals, presentations, and reports.</p>
+      </div>
+
+      <div class="type-specimen">
+        <div class="alphabet">
+          <p class="spec-label">Character set</p>
+          <p class="big-letters">Aa Bb Cc</p>
+          <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+          <p>abcdefghijklmnopqrstuvwxyz</p>
+          <p>0123456789 &amp; ? ! @ # %</p>
+        </div>
+        <div class="weights">
+          <p class="spec-label">Recommended weights</p>
+          <div><span>400</span><p class="weight-400">Regular for body copy</p></div>
+          <div><span>700</span><p class="weight-700">Bold for subheadings</p></div>
+          <div><span>800</span><p class="weight-800">ExtraBold for headlines</p></div>
+        </div>
+      </div>
+
+      <p class="folio folio--light">DevRocket Brand Guidelines</p>
+      <p class="version version--light">V1.0 · July 2026</p>
+    </section>
+
+    <section class="sheet sheet--light" aria-labelledby="usage-title">
+      <header class="sheet-header">
+        <img src="/img/about/dev-rocket-logo-no-tagline.svg" alt="DevRocket" />
+        <p>Type system · Usage</p>
+        <span>03</span>
+      </header>
+
+      <div class="section-intro section-intro--compact">
+        <p class="section-number">Section 03</p>
+        <h2 id="usage-title">Levels and combinations</h2>
+      </div>
+
+      <div class="usage-board">
+        <div class="usage-row usage-row--hero">
+          <div><span>Level 1</span><strong>Inter ExtraBold · 800</strong></div>
+          <p>Build software.<br /><em>Launch what’s next.</em></p>
+        </div>
+        <div class="usage-row usage-row--heading">
+          <div><span>Level 2</span><strong>Inter Bold · 700</strong></div>
+          <p>AI software engineering and workflow automation.</p>
+        </div>
+        <div class="usage-row usage-row--label">
+          <div><span>Level 3</span><strong>Inter Bold · 700</strong></div>
+          <p>Strategy&nbsp;&nbsp;&nbsp; Engineering&nbsp;&nbsp;&nbsp; Automation</p>
+        </div>
+        <div class="usage-row usage-row--body">
+          <div><span>Level 4</span><strong>Inter Regular · 400</strong></div>
+          <p>Founder-led product engineering for teams turning ambitious ideas into dependable software systems.</p>
+        </div>
+      </div>
+
+      <aside class="tip">
+        <span>Color tools</span>
+        <p>Keep the palette close at hand with <a href="https://sipapp.io/">Sip</a> on macOS or the <a href="https://learn.microsoft.com/en-us/windows/powertoys/color-picker">PowerToys Color Picker</a> on Windows.</p>
+      </aside>
+
+      <p class="folio">DevRocket Brand Guidelines</p>
+      <p class="version">V1.0 · July 2026</p>
+    </section>
+  </main>
+
+  <script>
+    document.querySelector('[data-print]')?.addEventListener('click', () => window.print());
+  </script>
+</BaseLayout>
+
+<style is:global>
+  :root { color-scheme: dark; }
+  html { background: #080a0f; }
+  body { margin: 0; background: #080a0f; color: #10121b; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .print-controls { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; width: min(100% - 32px, 1100px); margin: 0 auto; padding: 14px 0; color: #c6cad8; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+  .print-controls button { border: 1px solid #1df9f8; border-radius: 6px; padding: 9px 15px; background: #1df9f8; color: #05060a; font: inherit; cursor: pointer; }
+  .print-controls button:hover { background: #fff; border-color: #fff; }
+  .brand-guide { display: grid; gap: 28px; padding: 0 16px 60px; }
+  .sheet { position: relative; width: min(100%, 1100px); aspect-ratio: 11 / 8.5; margin: 0 auto; overflow: hidden; box-shadow: 0 20px 70px rgba(0,0,0,.4); }
+  .sheet--light { background: #f5f6fb; }
+  .sheet--dark, .sheet--cover { background: #05060a; color: #f5f6fb; }
+  .sheet--cover { background: radial-gradient(circle at 82% 15%, rgba(29,249,248,.11), transparent 26%), linear-gradient(145deg, #05060a 0%, #0d101a 100%); }
+  .cover-logo { position: absolute; top: 6.5%; left: 6.5%; width: 20%; height: auto; }
+  .cover-copy { position: absolute; top: 39%; left: 14%; }
+  .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 4%; color: #a0a5b8; font-size: clamp(8px, 1vw, 13px); font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+  .eyebrow span { width: 10px; height: 10px; border: 1px solid #1df9f8; }
+  .cover-copy h1 { margin: 0; color: #f5f6fb; font-size: clamp(38px, 6vw, 76px); font-weight: 400; letter-spacing: -.055em; line-height: .92; }
+  .cover-year { display: flex; align-items: center; gap: 18px; margin-top: 7%; color: #1df9f8; font-size: clamp(19px, 3vw, 38px); font-weight: 400; }
+  .cover-year span { width: 72px; height: 1px; background: #f5f6fb; }
+  .orbit { position: absolute; border: 1px solid rgba(29,249,248,.4); border-radius: 50%; }
+  .orbit--one { width: 57%; aspect-ratio: 1; top: -29%; right: -15%; }
+  .orbit--two { width: 42%; aspect-ratio: 1; right: 5%; bottom: -28%; border-color: rgba(25,196,189,.25); }
+  .sheet--cover::after { position: absolute; right: 18%; top: 0; width: 1px; height: 100%; content: ""; background: linear-gradient(transparent, #1df9f8, transparent); transform: rotate(24deg); opacity: .45; }
+  .sheet-header { position: absolute; top: 5.5%; right: 6%; left: 6%; display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; color: #19c4bd; font-size: clamp(8px, .9vw, 12px); font-weight: 700; letter-spacing: .05em; }
+  .sheet-header img { width: 18%; min-width: 120px; }
+  .sheet-header p { margin: 0; }
+  .sheet-header--dark { color: #19c4bd; }
+  .section-intro { position: absolute; top: 17%; left: 6%; width: 27%; }
+  .section-number { margin: 0 0 8px; color: #19c4bd; font-size: clamp(8px, .9vw, 12px); font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+  .section-intro h2 { margin: 0 0 18px; color: #10121b; font-size: clamp(30px, 4vw, 54px); font-weight: 400; letter-spacing: -.045em; line-height: 1; }
+  .section-intro > p:last-child { margin: 0; color: #62697d; font-size: clamp(9px, 1.15vw, 15px); line-height: 1.55; }
+  .section-intro--dark h2 { color: #f5f6fb; }
+  .section-intro--dark > p:last-child { color: #a0a5b8; }
+  .palette { position: absolute; top: 17%; right: 6%; bottom: 10%; left: 38%; display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1.18fr .82fr; }
+  .swatch { display: flex; flex-direction: column; justify-content: space-between; padding: 8%; color: #05060a; }
+  .swatch h3 { margin: 0; font-size: clamp(12px, 1.7vw, 22px); font-weight: 600; }
+  .swatch dl { margin: 0; font-size: clamp(7px, .8vw, 11px); }
+  .swatch dl div { display: grid; grid-template-columns: 44px 1fr; }
+  .swatch dt { font-weight: 800; }
+  .swatch dd { margin: 0; }
+  .swatch--cyan { background: #1df9f8; }
+  .swatch--teal { background: #19c4bd; }
+  .swatch--deep { background: #147e6d; color: #fff; }
+  .swatch--gold { background: #f1c36d; }
+  .swatch--black { background: #000; color: #fff; }
+  .swatch--white { border: 1px solid #dfe2ea; background: #fff; }
+  .type-specimen { position: absolute; top: 17%; right: 6%; bottom: 11%; left: 38%; display: grid; grid-template-columns: 1.05fr .95fr; gap: 6%; border: 1px solid #202437; padding: 5%; background: #10121b; }
+  .spec-label { margin: 0 0 12%; color: #19c4bd; font-size: clamp(8px, .9vw, 12px); font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+  .alphabet > p:not(.spec-label):not(.big-letters) { margin: 0 0 4%; color: #a0a5b8; font-size: clamp(8px, .95vw, 13px); letter-spacing: .14em; }
+  .alphabet .big-letters { margin: 0 0 12%; color: #1df9f8; font-size: clamp(37px, 6.5vw, 86px); font-weight: 400; letter-spacing: -.07em; line-height: 1; }
+  .weights > div { display: grid; grid-template-columns: 44px 1fr; align-items: baseline; gap: 10px; border-top: 1px solid #202437; padding: 9% 0; }
+  .weights span { color: #19c4bd; font-size: clamp(8px, .9vw, 12px); }
+  .weights p { margin: 0; color: #f5f6fb; font-size: clamp(11px, 1.4vw, 18px); }
+  .weight-400 { font-weight: 400; } .weight-700 { font-weight: 700; } .weight-800 { font-weight: 800; }
+  .section-intro--compact { top: 17%; width: 28%; }
+  .usage-board { position: absolute; top: 17%; right: 6%; left: 38%; border-top: 3px solid #1df9f8; background: #10121b; color: #f5f6fb; }
+  .usage-row { display: grid; grid-template-columns: 26% 1fr; gap: 5%; align-items: center; border-bottom: 1px solid #202437; padding: 3.5% 5%; }
+  .usage-row > div { display: grid; gap: 3px; color: #19c4bd; font-size: clamp(7px, .78vw, 10px); }
+  .usage-row strong { color: #a0a5b8; font-weight: 400; }
+  .usage-row > p { margin: 0; }
+  .usage-row--hero > p { font-size: clamp(20px, 3vw, 40px); font-weight: 800; letter-spacing: -.045em; line-height: 1; }
+  .usage-row--hero em { color: #1df9f8; font-style: normal; }
+  .usage-row--heading > p { font-size: clamp(12px, 1.65vw, 22px); font-weight: 700; }
+  .usage-row--label > p { color: #1df9f8; font-size: clamp(8px, .9vw, 12px); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .usage-row--body > p { color: #c6cad8; font-size: clamp(8px, 1vw, 13px); line-height: 1.55; }
+  .tip { position: absolute; right: 6%; bottom: 10%; left: 38%; display: grid; grid-template-columns: 25% 1fr; gap: 6%; border-left: 3px solid #f1c36d; padding: 2% 3%; background: #ebeef4; font-size: clamp(8px, .95vw, 12px); }
+  .tip span { color: #147e6d; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .tip p { margin: 0; color: #62697d; }
+  .tip a { color: #147e6d; font-weight: 700; }
+  .folio, .version { position: absolute; bottom: 4%; margin: 0; color: #7b8296; font-size: clamp(7px, .75vw, 10px); }
+  .folio { left: 6%; } .version { right: 6%; }
+  .folio--light, .version--light { color: #6d7488; }
+
+  @media (max-width: 700px) {
+    .brand-guide { gap: 14px; padding-inline: 8px; }
+    .print-controls { width: calc(100% - 20px); }
+    .sheet-header img { min-width: 72px; }
+    .section-intro h2 { margin-bottom: 7px; }
+    .cover-year span { width: 35px; }
+  }
+
+  @media print {
+    @page { size: letter landscape; margin: 0; }
+    html, body { width: 11in; margin: 0; background: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .print-controls { display: none !important; }
+    .brand-guide { display: block; padding: 0; }
+    .sheet { width: 11in; height: 8.5in; margin: 0; break-after: page; page-break-after: always; box-shadow: none; }
+    .sheet:last-child { break-after: auto; page-break-after: auto; }
+  }
+</style>
