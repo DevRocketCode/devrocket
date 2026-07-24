@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="DevRocket LinkedIn Banner Concepts"
-  description="Three screenshot-ready LinkedIn banner concepts for DevRocket."
+  description="Four screenshot-ready LinkedIn banner concepts for DevRocket."
 >
   <main class="banner-gallery">
     <header class="gallery-intro">
@@ -26,7 +26,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="grid-texture"></div>
         <div class="orbit orbit--expertise"></div>
         <div class="profile-safe-zone" aria-hidden="true"></div>
-        <img class="banner-logo" src="/img/about/dev-rocket-white-on-black.svg" alt="DevRocket" />
 
         <div class="expertise-copy">
           <p class="banner-kicker"><i></i> Founder-led AI development</p>
@@ -52,7 +51,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="banner banner--results" id="banner-2">
         <div class="results-sweep"></div>
         <div class="profile-safe-zone" aria-hidden="true"></div>
-        <img class="banner-logo" src="/img/about/dev-rocket-white-on-black.svg" alt="DevRocket" />
 
         <div class="results-heading">
           <p class="banner-kicker"><i></i> Production systems. Real outcomes.</p>
@@ -87,7 +85,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="banner banner--builder" id="banner-3">
         <div class="builder-lines"></div>
         <div class="profile-safe-zone" aria-hidden="true"></div>
-        <img class="banner-logo" src="/img/about/dev-rocket-white-on-black.svg" alt="DevRocket" />
 
         <div class="builder-copy">
           <p class="banner-kicker"><i></i> Work directly with the builder</p>
@@ -100,6 +97,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <strong>LLMs · RAG · React · Node · Python · AWS · GCP</strong>
           <span>Founder &amp; AI Software Engineer — Preston Wallace</span>
         </div>
+      </div>
+    </section>
+
+    <section class="concept" aria-labelledby="concept-four-title">
+      <div class="concept-meta">
+        <div><span>04</span><h2 id="concept-four-title">The complete story</h2></div>
+        <p>Positioning, production credibility, and delivery scope in one banner.</p>
+      </div>
+
+      <div class="banner banner--combined" id="banner-4">
+        <div class="combined-grid"></div>
+        <div class="combined-orbit"></div>
+        <div class="profile-safe-zone" aria-hidden="true"></div>
+
+        <div class="combined-copy">
+          <p class="banner-kicker"><i></i> Production systems. Real outcomes.</p>
+          <h3>AI software that<br /><em>moves real work.</em></h3>
+        </div>
+
+        <div class="combined-proof">
+          <p>Production experience across</p>
+          <strong>LLMs · RAG · React · Node · Python · AWS · GCP</strong>
+          <span>Founder &amp; AI Software Engineer — Preston Wallace</span>
+        </div>
+
+        <p class="combined-delivery">AI engineering · workflow automation · production delivery</p>
       </div>
     </section>
 
@@ -258,15 +281,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     pointer-events: none;
     content: "";
     border: 1px solid rgba(255, 255, 255, .06);
-  }
-
-  .banner-logo {
-    position: absolute;
-    top: 34px;
-    left: 54px;
-    z-index: 5;
-    width: 238px;
-    height: auto;
   }
 
   .profile-safe-zone {
@@ -550,6 +564,107 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--gold);
     font-size: 11px;
     font-weight: 700;
+  }
+
+  /* Concept 4 */
+  .banner--combined {
+    background:
+      radial-gradient(circle at 74% 14%, rgba(29,249,248,.12), transparent 24%),
+      linear-gradient(118deg, #05060a 0 55%, #08191b 100%);
+  }
+
+  .combined-grid {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .42;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,.026) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .combined-orbit {
+    position: absolute;
+    top: -355px;
+    right: 300px;
+    width: 720px;
+    height: 720px;
+    border: 1px solid rgba(29,249,248,.3);
+    border-radius: 50%;
+  }
+
+  .banner--combined::before {
+    position: absolute;
+    right: 470px;
+    top: -180px;
+    width: 1px;
+    height: 760px;
+    content: "";
+    background: linear-gradient(transparent, rgba(29,249,248,.55), transparent);
+    transform: rotate(25deg);
+  }
+
+  .combined-copy {
+    position: absolute;
+    top: 80px;
+    left: 354px;
+    z-index: 4;
+  }
+
+  .combined-copy h3 {
+    font-size: 50px;
+  }
+
+  .combined-proof {
+    position: absolute;
+    top: 82px;
+    right: 58px;
+    z-index: 4;
+    width: 520px;
+    border: 1px solid rgba(29,249,248,.16);
+    border-left: 3px solid var(--cyan);
+    border-radius: 0 7px 7px 0;
+    padding: 27px 30px;
+    background: linear-gradient(100deg, rgba(29,249,248,.07), rgba(16,18,27,.72));
+    backdrop-filter: blur(4px);
+  }
+
+  .combined-proof p {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .combined-proof strong {
+    display: block;
+    color: var(--text);
+    font-size: 19px;
+    line-height: 1.45;
+  }
+
+  .combined-proof span {
+    display: block;
+    margin-top: 20px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .combined-delivery {
+    position: absolute;
+    right: 58px;
+    bottom: 29px;
+    z-index: 4;
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
   }
 
   .capture-note {
