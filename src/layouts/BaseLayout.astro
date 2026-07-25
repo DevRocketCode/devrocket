@@ -12,6 +12,8 @@ const {
 } = Astro.props;
 
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : Astro.url.toString();
+const gaPrimaryId = 'G-R1SZKKGDJJ';
+const gaAdditionalIds = ['4855531459'];
 ---
 
 <!doctype html>
@@ -34,6 +36,29 @@ const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toStri
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="stylesheet" href="/fonts/simple-line-icons.css" />
     <link rel="stylesheet" href="/fonts/font-awesome.min.css" />
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaPrimaryId}`}></script>
+    <script is:inline define:vars={{ gaPrimaryId, gaAdditionalIds }}>
+      const respectsDNT = ['1', 'yes'].includes(String(navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack).toLowerCase());
+
+      if (!respectsDNT) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          window.dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', gaPrimaryId, {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        });
+
+        gaAdditionalIds.forEach((id) => {
+          gtag('config', id, {
+            anonymize_ip: true,
+            cookie_expires: 0,
+          });
+        });
+      }
+    </script>
     <title>{title}</title>
   </head>
   <body>
