@@ -1509,6 +1509,101 @@ h1 span {
   box-shadow: 0 0 18px rgba(29, 249, 248, 0.42);
 }
 
+.system-accordion__content--visual {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+  gap: 34px;
+  align-items: end;
+}
+
+.system-accordion__link {
+  width: fit-content;
+  display: inline-flex;
+  margin-top: 26px;
+  color: #021214;
+}
+
+.system-accordion__link:hover,
+.system-accordion__link:focus-visible {
+  color: #021214;
+}
+
+.system-accordion__link i {
+  transition: transform 160ms ease;
+}
+
+.system-accordion__link:hover i,
+.system-accordion__link:focus-visible i {
+  transform: translateX(4px);
+}
+
+.system-accordion__preview {
+  position: relative;
+  min-height: 220px;
+  overflow: hidden;
+  border: 1px solid rgba(29, 249, 248, 0.3);
+  border-radius: 10px;
+  background: var(--bg-soft);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
+}
+
+.system-accordion__preview > img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 220ms ease;
+}
+
+.system-accordion__preview-graphic {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(29, 249, 248, 0.2), transparent 42%),
+    linear-gradient(135deg, rgba(16, 18, 27, 0.95), rgba(7, 28, 29, 0.96));
+}
+
+.system-accordion__preview-graphic > i {
+  color: var(--accent);
+  font-size: 1.8rem;
+}
+
+.system-accordion__preview-graphic small {
+  color: var(--muted-strong);
+  font-weight: 850;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.system-accordion__preview-graphic strong {
+  color: var(--text);
+  font-size: 1.35rem;
+}
+
+.system-accordion__preview-label {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(5, 6, 10, 0.92);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.system-accordion__preview:hover > img,
+.system-accordion__preview:focus-visible > img {
+  transform: scale(1.025);
+}
+
 .process-steps {
   display: grid;
   gap: 1px;
@@ -1941,6 +2036,14 @@ h1 span {
 
   .system-accordion dl {
     grid-template-columns: 1fr;
+  }
+
+  .system-accordion__content--visual {
+    grid-template-columns: 1fr;
+  }
+
+  .system-accordion__preview {
+    width: min(100%, 520px);
   }
 
   .founder-bio,

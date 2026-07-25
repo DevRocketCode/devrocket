@@ -101,6 +101,7 @@ export const systems = [
   {
     id: "predictive-budget-spend-system",
     title: "Predictive budget-spend system",
+    href: "https://prestonwallace.com/#predictive-budget-spend-system",
     problem:
       "Campaign and revenue signals were spread across systems, making it harder to spot spend opportunities quickly.",
     type: "Predictive operations workflow",
@@ -116,6 +117,9 @@ export const systems = [
   {
     id: "llm-contact-discovery",
     title: "LLM contact discovery",
+    href: "https://prestonwallace.com/portfolio/llm-contact-discovery",
+    image: "/img/portfolio/llm-contact-discovery/results.png",
+    imageAlt: "LLM Contact Discovery results dashboard",
     problem:
       "Sales teams needed a faster way to identify and enrich prospects from public web data.",
     type: "LLM-powered prospecting pipeline",
@@ -131,6 +135,7 @@ export const systems = [
   {
     id: "ai-instructor-validation",
     title: "AI instructor validation",
+    href: "https://prestonwallace.com/#ai-instructor-validation",
     problem:
       "Manual instructor validation and access checks created delays and repetitive operational work.",
     type: "Real-time validation and access control",
@@ -146,6 +151,7 @@ export const systems = [
   {
     id: "ai-office-hours-automation",
     title: "AI office-hours automation",
+    href: "https://prestonwallace.com/#ai-office-hours-automation",
     problem:
       "Office-hours workflows depended on repetitive document review and manual Salesforce updates.",
     type: "OCR and API workflow automation",
@@ -161,6 +167,7 @@ export const systems = [
   {
     id: "production-document-chat",
     title: "Production document chat",
+    href: "https://prestonwallace.com/#production-document-chat",
     problem:
       "Users needed a reliable way to ask questions across data and documents in a production environment.",
     type: "AI chat platform for data and document access",
@@ -176,6 +183,7 @@ export const systems = [
   {
     id: "ai-rag-campaign-workflow",
     title: "AI/RAG campaign workflow",
+    href: "https://prestonwallace.com/#ai-rag-campaign-workflow",
     problem:
       "Campaign build work was slowed by repeated research, scattered context, and handoffs.",
     type: "RAG and workflow acceleration",
@@ -194,6 +202,7 @@ export const systems = [
   {
     id: "node-graphql-api-modernization",
     title: "Node and GraphQL API modernization",
+    href: "https://prestonwallace.com/#node-graphql-api-modernization",
     problem:
       "Production APIs needed to handle product demand with lower latency and more predictable behavior.",
     type: "Backend performance engineering",
@@ -209,6 +218,7 @@ export const systems = [
   {
     id: "ci-cd-infrastructure-acceleration",
     title: "CI/CD infrastructure acceleration",
+    href: "https://prestonwallace.com/#ci-cd-infrastructure-acceleration",
     problem:
       "The engineering workflow was slowed by long test, build, and deploy cycles.",
     type: "Infrastructure and delivery automation",
