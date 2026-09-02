@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const checks = [
+  {
+    icon: 'fa-repeat',
+    title: 'Repeatable',
+    prompt: 'How often does this workflow occur, and how consistently does it follow the same steps?',
+    bullets: [
+      'It happens frequently enough to justify changing how the work gets done.',
+      'The inputs and decisions follow a recognizable pattern most of the time.',
+      'Someone on the team can explain the current steps from start to finish.',
+    ],
+    example: 'Example: Every inbound invoice is opened, checked for the same fields, entered into the accounting system, and routed for approval.',
+  },
+  {
+    icon: 'fa-line-chart',
+    title: 'Valuable',
+    prompt: 'What measurable business result would improve through automation?',
+    bullets: [
+      'The current workflow consumes meaningful time, creates delays, or produces costly errors.',
+      'Success can be measured in revenue, cost, speed, quality, or customer experience.',
+      'The expected gain is large enough to justify building and maintaining the solution.',
+    ],
+    example: 'Example: Five people spend three hours per week on the task, totaling about 780 hours per year. The goal is a two-hour turnaround time.',
+  },
+  {
+    icon: 'fa-plug',
+    title: 'Feasible',
+    prompt: 'Which inputs, connections, and success criteria are available for this workflow?',
+    bullets: [
+      'The required documents, messages, or records are accessible and reasonably consistent.',
+      'The systems involved support an API, export, webhook, or another dependable connection.',
+      'A good output can be defined and tested against representative examples.',
+    ],
+    example: 'Example: Invoices arrive as PDFs, the accounting platform has an API, and accuracy can be tested against 100 previously processed invoices.',
+  },
+  {
+    icon: 'fa-shield',
+    title: 'Safe',
+    prompt: 'What review, recovery, and access controls does this workflow require?',
+    bullets: [
+      'High-risk or low-confidence decisions have a clear human approval point.',
+      'Failures are logged and can fall back to the existing manual process.',
+      'Permissions, sensitive data, retention, and audit requirements are understood.',
+    ],
+    example: 'Example: Routine invoices post automatically. Mismatched totals or low-confidence fields are sent to the finance team for review.',
+  },
+];
+---
+
+<BaseLayout
+  title="The AI Automation Checklist | DevRocket"
+  description="A free four-part checklist to decide whether a business workflow is worth automating."
+>
+  <div class="document-controls" aria-label="Document controls">
+    <a href="/resources"><i class="fa fa-arrow-left" aria-hidden="true"></i> All resources</a>
+    <span>The AI Automation Checklist</span>
+    <button type="button" data-print><i class="fa fa-print" aria-hidden="true"></i> Print / Save PDF</button>
+  </div>
+
+  <main class="checklist-document">
+    <section class="document-page" aria-labelledby="document-title">
+      <div class="page-grid" aria-hidden="true"></div>
+      <header class="document-header">
+        <img src="/img/about/dev-rocket-white-on-black.svg" alt="DevRocket" />
+        <span>Free resource · 01</span>
+      </header>
+
+      <div class="title-block">
+        <div>
+          <p><span></span> A 10-minute decision tool</p>
+          <h1 id="document-title">The AI <em>Automation</em> Checklist</h1>
+        </div>
+        <p>Choose one workflow. Check each area only when you can support it with a real example from the current process.</p>
+      </div>
+
+      <div class="workflow-field"><label for="workflow-name">Workflow I am evaluating</label><span id="workflow-name"></span></div>
+
+      <div class="check-grid">
+        {checks.map((check, index) => (
+          <article class="check-item">
+            <div class="check-heading">
+              <span class="check-box" aria-hidden="true"></span>
+              <div class="check-icon"><i class={`fa ${check.icon}`} aria-hidden="true"></i></div>
+              <div><p>{String(index + 1).padStart(2, '0')}</p><h2>{check.title}</h2></div>
+            </div>
+            <p class="check-prompt">{check.prompt}</p>
+            <ul>{check.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
+            <small>{check.example}</small>
+          </article>
+        ))}
+      </div>
+
+      <div class="score-panel">
+        <div><p>Your score</p><strong><span></span> / 4</strong></div>
+        <ul><li><b>4</b> Define the pilot scope</li><li><b>2 or 3</b> Document missing requirements</li><li><b>0 or 1</b> Continue workflow discovery</li></ul>
+        <p><b>Next step:</b> Pick the smallest end-to-end version that can prove one measurable outcome with real users and representative data.</p>
+      </div>
+      <footer class="document-footer"><span>devrocket.io</span><span>AI software engineering · Workflow automation</span></footer>
+    </section>
+  </main>
+
+  <script>document.querySelector('[data-print]')?.addEventListener('click', () => window.print());</script>
+</BaseLayout>
+
+<style is:global>
+  :root { color-scheme: dark; } html { background: #080a0f; } body { margin: 0; background: #080a0f; color: #10121b; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+  .document-controls { position: sticky; top: 0; z-index: 10; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: min(100% - 32px, 900px); margin: 0 auto; padding: 14px 0; color: #a0a5b8; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+  .document-controls a { display: inline-flex; align-items: center; gap: 8px; color: #a0a5b8; text-decoration: none; } .document-controls a:hover { color: #1df9f8; }
+  .document-controls button { justify-self: end; border: 1px solid #1df9f8; border-radius: 6px; padding: 9px 15px; background: #1df9f8; color: #05060a; font: inherit; cursor: pointer; } .document-controls button:hover { border-color: #fff; background: #fff; }
+  .checklist-document { padding: 0 16px 60px; }
+  .document-page { position: relative; width: min(100%, 900px); aspect-ratio: 8.5 / 11; margin: 0 auto; overflow: hidden; background: #f5f6fb; box-shadow: 0 20px 70px rgba(0,0,0,.4); }
+  .document-page::before { position: absolute; top: 0; right: 0; left: 0; height: 21%; content: ''; background: radial-gradient(circle at 88% 0, rgba(29,249,248,.16), transparent 34%), linear-gradient(135deg, #05060a, #0d101a); }
+  .page-grid { position: absolute; top: 0; right: 0; left: 0; height: 21%; opacity: .25; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 42px 42px; }
+  .document-header { position: absolute; top: 3.8%; right: 5.5%; left: 5.5%; z-index: 2; display: flex; align-items: center; justify-content: space-between; color: #19c4bd; font-size: clamp(7px, .95vw, 10px); font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .document-header img { width: 18%; min-width: 105px; }
+  .title-block { position: absolute; top: 9%; right: 5.5%; left: 5.5%; z-index: 2; display: grid; grid-template-columns: 1.5fr .72fr; align-items: end; gap: 6%; color: #f5f6fb; }
+  .title-block div > p { display: flex; align-items: center; gap: 9px; margin: 0 0 7px; color: #a0a5b8; font-size: clamp(7px, .9vw, 9px); font-weight: 800; letter-spacing: .14em; text-transform: uppercase; } .title-block div > p span { width: 8px; height: 8px; border: 1px solid #1df9f8; }
+  .title-block h1 { margin: 0; font-size: clamp(27px, 5.3vw, 51px); letter-spacing: -.055em; line-height: .92; } .title-block h1 em { color: #1df9f8; font-style: normal; }
+  .title-block > p { margin: 0; color: #c6cad8; font-size: clamp(7px, 1vw, 10px); line-height: 1.45; }
+  .workflow-field { position: absolute; top: 23%; right: 5.5%; left: 5.5%; display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 12px; color: #147e6d; font-size: clamp(7px, .9vw, 9px); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; } .workflow-field span { height: 15px; border-bottom: 1px solid #62697d; }
+  .check-grid { position: absolute; top: 27%; right: 5.5%; left: 5.5%; display: grid; grid-template-columns: 1fr 1fr; gap: 2.2%; }
+  .check-item { min-height: 260px; border: 1px solid #d7dce5; border-top: 3px solid #19c4bd; padding: 3.5%; background: #fff; }
+  .check-heading { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: 10px; }
+  .check-box { width: clamp(14px, 1.9vw, 18px); aspect-ratio: 1; border: 1.5px solid #147e6d; }
+  .check-icon { display: grid; place-items: center; width: clamp(28px, 3.8vw, 37px); aspect-ratio: 1; border-radius: 50%; background: #dff9f7; color: #147e6d; font-size: clamp(11px, 1.5vw, 15px); }
+  .check-heading p { margin: 0; color: #19c4bd; font-size: clamp(6px, .78vw, 8px); font-weight: 800; letter-spacing: .12em; }
+  .check-item h2 { margin: 0; font-size: clamp(20px, 3vw, 29px); letter-spacing: -.045em; line-height: .9; }
+  .check-prompt { margin: 10px 0 0; color: #353b4b; font-size: clamp(8px, 1.12vw, 11px); font-weight: 700; line-height: 1.3; }
+  .check-item > ul { display: grid; gap: 4px; margin: 9px 0 0; padding-left: 15px; color: #52596c; font-size: clamp(7px, .93vw, 9.2px); line-height: 1.32; } .check-item li::marker { color: #19c4bd; }
+  .check-item small { display: block; margin-top: 9px; border-left: 2px solid #f1c36d; padding: 6px 8px; background: #f3f5f8; color: #147e6d; font-size: clamp(6.5px, .86vw, 8.5px); font-style: italic; line-height: 1.35; }
+  .score-panel { position: absolute; right: 5.5%; bottom: 5.7%; left: 5.5%; display: grid; grid-template-columns: .62fr 1fr 1.55fr; gap: 4%; align-items: center; border-top: 3px solid #1df9f8; padding: 2.2% 2.8%; background: #10121b; color: #f5f6fb; }
+  .score-panel p { margin: 0; font-size: clamp(7px, 1vw, 10px); line-height: 1.45; } .score-panel > div > p { color: #19c4bd; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; } .score-panel strong { display: flex; align-items: flex-end; gap: 5px; font-size: clamp(20px, 3.5vw, 34px); } .score-panel strong span { display: inline-block; width: 38px; border-bottom: 1px solid #f5f6fb; }
+  .score-panel ul { margin: 0; padding: 0; list-style: none; color: #c6cad8; font-size: clamp(6px, .88vw, 9px); line-height: 1.75; } .score-panel li b { color: #1df9f8; }
+  .document-footer { position: absolute; right: 5.5%; bottom: 2.5%; left: 5.5%; display: flex; justify-content: space-between; color: #6d7488; font-size: clamp(6px, .8vw, 8px); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+  @media (max-width: 620px) { .document-controls { grid-template-columns: 1fr auto; } .document-controls > span { display: none; } .checklist-document { padding-inline: 8px; } }
+  @media print { @page { size: letter portrait; margin: 0; } html, body { background: #fff !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; } .document-controls { display: none !important; } .checklist-document { padding: 0; } .document-page { width: 8.5in; height: 11in; box-shadow: none; } }
+</style>

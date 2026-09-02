@@ -1,0 +1,91 @@
+---
+import Layout from '../../components/Layout.astro';
+import { resources } from '../../data/resources';
+---
+
+<Layout
+  title="Free AI Resources | DevRocket"
+  description="Practical, free tools for evaluating AI opportunities and planning production-ready automation."
+>
+  <section class="resources-hero">
+    <div class="resources-orbit resources-orbit--one"></div>
+    <div class="resources-orbit resources-orbit--two"></div>
+    <div class="content-container resources-hero__inner">
+      <a class="resources-back" href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i> DevRocket</a>
+      <p class="eyebrow">Free resources</p>
+      <h1>Think clearly.<br /><em>Build what matters.</em></h1>
+      <p>Short, practical tools for finding high-value AI opportunities and turning them into dependable systems.</p>
+    </div>
+  </section>
+
+  <section class="resources-library" aria-labelledby="library-title">
+    <div class="content-container">
+      <div class="resources-library__heading">
+        <div>
+          <p class="eyebrow">Resource library</p>
+          <h2 id="library-title">Tools you can use today.</h2>
+        </div>
+        <p>Built for founders, operators, and technical leaders. Open, use, and share these resources freely.</p>
+      </div>
+
+      <div class="resource-grid">
+        {resources.map((resource, index) => (
+          <a class="resource-card" href={`/resources/${resource.slug}`}>
+            <div class="resource-card__preview" aria-hidden="true">
+              <div class="preview-grid"></div>
+              <span class="resource-card__number">{String(index + 1).padStart(2, '0')}</span>
+              <i class={`fa ${resource.icon}`}></i>
+              <strong>{resource.previewNumber}</strong>
+              <small>{resource.previewLabel.split('\n').map((line, lineIndex) => <>{lineIndex > 0 && <br />}{line}</>)}</small>
+            </div>
+            <div class="resource-card__body">
+              <p>{resource.eyebrow}</p>
+              <h3>{resource.title}</h3>
+              <span>{resource.summary}</span>
+              <div class="resource-card__meta">
+                <span><i class="fa fa-clock-o" aria-hidden="true"></i> {resource.time}</span>
+                <span><i class="fa fa-file-text-o" aria-hidden="true"></i> {resource.format}</span>
+              </div>
+              <b>Open resource <i class="fa fa-arrow-right" aria-hidden="true"></i></b>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .resources-hero { position: relative; min-height: 560px; overflow: hidden; border-bottom: 1px solid var(--line); background: radial-gradient(circle at 82% 22%, rgba(29,249,248,.13), transparent 24%), linear-gradient(145deg, #05060a, #0d101a); }
+  .resources-hero::after { position: absolute; top: -20%; right: 18%; width: 1px; height: 145%; content: ''; background: linear-gradient(transparent, var(--accent), transparent); opacity: .42; transform: rotate(24deg); }
+  .resources-hero__inner { position: relative; z-index: 2; padding-top: 145px; padding-bottom: 100px; }
+  .resources-back { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 64px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .resources-back:hover { color: var(--accent); }
+  .resources-hero h1 { max-width: 800px; margin-top: 14px; font-size: clamp(54px, 8vw, 102px); font-weight: 800; letter-spacing: -.065em; line-height: .88; }
+  .resources-hero h1 em { color: var(--accent); font-style: normal; }
+  .resources-hero__inner > p:last-child { max-width: 650px; margin-top: 32px; color: var(--muted-strong); font-size: 19px; }
+  .resources-orbit { position: absolute; border: 1px solid rgba(29,249,248,.28); border-radius: 50%; }
+  .resources-orbit--one { top: -290px; right: -130px; width: 670px; height: 670px; }
+  .resources-orbit--two { right: 12%; bottom: -300px; width: 500px; height: 500px; border-color: rgba(25,196,189,.18); }
+  .resources-library { padding: 110px 0 140px; }
+  .resources-library__heading { display: grid; grid-template-columns: 1fr 430px; align-items: end; gap: 70px; margin-bottom: 56px; }
+  .resources-library h2 { margin-top: 8px; font-size: clamp(38px, 5vw, 64px); letter-spacing: -.05em; line-height: 1; }
+  .resources-library__heading > p { color: var(--muted); }
+  .resource-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  .resource-card { display: grid; grid-template-columns: 44% 56%; min-height: 390px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); transition: border-color .2s ease, transform .2s ease; }
+  .resource-card:hover { border-color: var(--accent-2); transform: translateY(-4px); }
+  .resource-card__preview { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 390px; overflow: hidden; padding: 34px; background: radial-gradient(circle at 30% 22%, rgba(29,249,248,.16), transparent 30%), linear-gradient(150deg, #080a0f, #10282d); }
+  .preview-grid { position: absolute; inset: 0; opacity: .4; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 36px 36px; }
+  .resource-card__number { position: absolute; top: 26px; left: 30px; color: var(--accent-2); font-size: 12px; font-weight: 800; letter-spacing: .16em; }
+  .resource-card__preview > i { position: absolute; top: 28px; right: 28px; color: var(--accent); font-size: 24px; }
+  .resource-card__preview strong { position: relative; color: var(--accent); font-size: 112px; letter-spacing: -.08em; line-height: .75; }
+  .resource-card__preview small { position: relative; margin-top: 18px; color: var(--text); font-size: 19px; font-weight: 800; line-height: 1.05; text-transform: uppercase; }
+  .resource-card__body { display: flex; flex-direction: column; align-items: flex-start; padding: 40px; }
+  .resource-card__body > p { color: var(--accent-2); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+  .resource-card h3 { margin-top: 15px; font-size: 30px; letter-spacing: -.035em; line-height: 1.05; }
+  .resource-card__body > span { margin-top: 20px; color: var(--muted); font-size: 15px; }
+  .resource-card__meta { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; color: var(--muted-strong); font-size: 12px; }
+  .resource-card__meta i { margin-right: 5px; color: var(--accent-2); }
+  .resource-card__body b { display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 34px; color: var(--accent); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+  @media (max-width: 800px) { .resources-library__heading, .resource-card { grid-template-columns: 1fr; } .resources-library__heading { gap: 22px; } .resource-grid { grid-template-columns: 1fr; } .resource-card__preview { min-height: 300px; } }
+</style>
