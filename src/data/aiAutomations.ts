@@ -26,7 +26,7 @@ export const aiAutomations: AiAutomation[] = [
     workflow: [
       'A form, webinar, or demo request creates the lead',
       'AI enriches the person and company, checks ICP fit, and explains the score',
-      'Qualified leads are assigned by territory or round robin; everyone else enters nurture',
+      'Routing rules assign qualified leads by territory or round robin and place the remaining leads into nurture',
     ],
     tools: [
       { name: 'Clay', href: 'https://www.clay.com/use-cases/inbound-enrichment', note: 'enrichment + scoring' },
@@ -34,7 +34,7 @@ export const aiAutomations: AiAutomation[] = [
       { name: 'n8n', href: 'https://n8n.io/', note: 'open-source orchestration' },
     ],
     metric: 'Median speed-to-lead, qualified-lead rate, and lead-to-opportunity conversion.',
-    guardrail: 'Keep territory, consent, suppression, and strategic-account rules deterministic—not model-decided.',
+    guardrail: 'Use deterministic rules for territory, consent, suppression, and strategic accounts.',
     resource: { label: 'Copy Clay’s inbound lead workflow', href: 'https://university.clay.com/claybooks/enrich-and-score-inbound-leads-from-your-website-instantly' },
   },
   {
@@ -42,7 +42,7 @@ export const aiAutomations: AiAutomation[] = [
     category: 'Revenue',
     title: 'Turn buying signals into researched outreach',
     description:
-      'Watch for meaningful events—funding, hiring, product launches, leadership changes, or high-intent site visits—and give reps a timely reason to reach out.',
+      'Watch for meaningful events such as funding, hiring, product launches, leadership changes, and high-intent site visits, then give reps a timely reason to reach out.',
     workflow: [
       'A first- or third-party intent signal enters the workflow',
       'AI researches the account, validates the signal, and maps it to your offer',
@@ -74,7 +74,7 @@ export const aiAutomations: AiAutomation[] = [
       { name: 'Salesforce', href: 'https://www.salesforce.com/sales/cloud/', note: 'CRM system of record' },
     ],
     metric: 'CRM field completion, follow-up time, overdue next steps, and stage conversion.',
-    guardrail: 'Let the rep approve customer-facing messages and deal-stage changes; never infer commitments that were not stated.',
+    guardrail: 'Require rep approval for customer-facing messages and deal-stage changes, and record commitments exactly as stated.',
     resource: { label: 'Review Fathom’s CRM sync behavior', href: 'https://help.fathom.video/en/articles/448640' },
   },
   {
@@ -82,7 +82,7 @@ export const aiAutomations: AiAutomation[] = [
     category: 'Revenue',
     title: 'Draft RFPs and security questionnaires from approved answers',
     description:
-      'Give proposal teams a cited first draft instead of a blank spreadsheet, then route only uncertain or stale answers to subject-matter experts.',
+      'Give proposal teams a cited first draft, then route uncertain or stale answers to subject-matter experts.',
     workflow: [
       'A Word, PDF, spreadsheet, or portal questionnaire is imported and split into requirements',
       'AI matches each question to governed answers, policies, case studies, and prior responses',
@@ -102,7 +102,7 @@ export const aiAutomations: AiAutomation[] = [
     category: 'Revenue',
     title: 'Re-engage stalled and previously lost opportunities',
     description:
-      'Continuously look for deals with a credible new reason to restart the conversation instead of sending generic “just checking in” emails.',
+      'Continuously look for deals with a credible new reason to restart the conversation and use that reason to shape the outreach.',
     workflow: [
       'A closed-lost or inactive opportunity becomes eligible after a defined quiet period',
       'AI compares the loss reason with new product, pricing, company, and account signals',
@@ -122,7 +122,7 @@ export const aiAutomations: AiAutomation[] = [
     category: 'Customer',
     title: 'Resolve repeat support questions with verified answers',
     description:
-      'Answer high-volume, low-risk questions immediately using your help center and product data, while keeping a clean path to a human.',
+      'Answer high-volume, low-risk questions immediately using your help center and product data, with a clear escalation path to a human.',
     workflow: [
       'A customer asks a question in chat or email',
       'AI retrieves the relevant approved content, asks clarifying questions, and answers with context',
@@ -174,7 +174,7 @@ export const aiAutomations: AiAutomation[] = [
       { name: 'Vitally', href: 'https://www.vitally.io/', note: 'customer health + playbooks' },
     ],
     metric: 'Risk lead time, gross retention, save rate, expansion pipeline, and forecast accuracy.',
-    guardrail: 'Show the source evidence behind every risk; do not let sentiment alone change health scores or forecasts.',
+    guardrail: 'Show the source evidence behind every risk and require additional signals before changing health scores or forecasts.',
     resource: { label: 'Study Gainsight’s Risk Analyst workflow', href: 'https://support.gainsight.com/Staircase_AI/Staircase_AI_Features/Risk_Analyst' },
   },
   {
@@ -194,7 +194,7 @@ export const aiAutomations: AiAutomation[] = [
       { name: 'Zapier', href: 'https://zapier.com/ai', note: 'collection + delivery' },
     ],
     metric: 'Feedback coverage, time-to-insight, themes acted on, and repeated issue volume.',
-    guardrail: 'Include counts and source excerpts, strip personal data, and separate observed evidence from AI interpretation.',
+    guardrail: 'Include counts and source excerpts, strip personal data, and label AI interpretations clearly.',
     resource: { label: 'Learn AI-powered thematic analysis', href: 'https://static-assets.dovetail.com/ebook-arriving-at-user-insights-faster-with-ai-powered-research.pdf' },
   },
   {
@@ -224,7 +224,7 @@ export const aiAutomations: AiAutomation[] = [
     description:
       'Replace one-size-fits-all drips with messages shaped by what each person has done, skipped, asked, or struggled with.',
     workflow: [
-      'A product or CRM event—trial inactivity, feature adoption, cart abandonment, renewal proximity—starts a journey',
+      'A product or CRM event, such as trial inactivity, feature adoption, cart abandonment, or renewal proximity, starts a journey',
       'AI selects the relevant proof point, education, or next step and adapts the draft to the segment',
       'Rules cap frequency, test variants, and escalate high-value intent to a person',
     ],
@@ -246,7 +246,7 @@ export const aiAutomations: AiAutomation[] = [
     workflow: [
       'An invoice arrives by email or upload',
       'OCR and AI extract fields, match the vendor and PO, suggest codes, and flag anomalies',
-      'Routine bills route for approval; exceptions go to AP with the mismatch highlighted',
+      'Bills follow the appropriate approval path, with mismatches highlighted for AP review',
     ],
     tools: [
       { name: 'Ramp Bill Pay', href: 'https://ramp.com/accounts-payable', note: 'AP automation + agents' },
@@ -274,7 +274,7 @@ export const aiAutomations: AiAutomation[] = [
       { name: 'DocuSign', href: 'https://www.docusign.com/products/iam', note: 'agreement management' },
     ],
     metric: 'Time to first review, legal touches, cycle time, deviations found, and missed renewals.',
-    guardrail: 'AI prepares and flags; an authorized legal or business owner accepts terms and sends redlines.',
+    guardrail: 'Require an authorized legal or business owner to review AI-prepared materials, accept terms, and send redlines.',
     resource: { label: 'See cited contract intake in practice', href: 'https://support.ironcladapp.com/hc/en-us/articles/39616157653911-Intake-Agent-Overview' },
   },
   {
@@ -282,9 +282,9 @@ export const aiAutomations: AiAutomation[] = [
     category: 'Team',
     title: 'Answer internal questions from company knowledge',
     description:
-      'Give people one place to ask “How do we…?” across docs, wikis, tickets, chat, and code—with permission-aware answers that cite the source.',
+      'Give people one place to ask “How do we…?” across docs, wikis, tickets, chat, and code, with permission-aware answers that cite the source.',
     workflow: [
-      'Approved company sources are indexed without changing their existing access controls',
+      'Approved company sources are indexed under their existing access controls',
       'A teammate asks a question in plain language and gets a concise, cited answer',
       'Unanswered questions become a knowledge gap assigned to the source owner',
     ],
@@ -302,7 +302,7 @@ export const aiAutomations: AiAutomation[] = [
     category: 'Team',
     title: 'Triage production incidents and draft the fix',
     description:
-      'Combine errors, traces, logs, releases, and code context so engineers start with a probable root cause and a reviewable patch instead of a cold investigation.',
+      'Combine errors, traces, logs, releases, and code context so engineers start with a probable root cause and a reviewable patch.',
     workflow: [
       'Monitoring groups a new error and attaches runtime context',
       'AI scores actionability, investigates the root cause, and proposes a solution',
@@ -314,7 +314,7 @@ export const aiAutomations: AiAutomation[] = [
       { name: 'PagerDuty', href: 'https://www.pagerduty.com/use-cases/aiops/', note: 'incident orchestration' },
     ],
     metric: 'Mean time to acknowledge, mean time to resolve, alert noise, regressions, and engineer hours per incident.',
-    guardrail: 'Run tests and require code-owner approval; never auto-deploy AI-generated changes to production.',
+    guardrail: 'Run tests, require code-owner approval, and keep production deployment under human control.',
     resource: { label: 'See Sentry Seer’s end-to-end flow', href: 'https://docs.sentry.io/product/ai-in-sentry/seer' },
   },
 ];
