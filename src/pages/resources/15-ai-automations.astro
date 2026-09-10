@@ -45,8 +45,6 @@ const evidence = [
   description="Real-world AI automations for modern teams, with practical workflows, vetted tools, rollout guardrails, KPIs, and implementation resources."
 >
   <div class="guide-controls" aria-label="Resource controls">
-    <a href="/resources"><i class="fa fa-arrow-left" aria-hidden="true"></i> All resources</a>
-    <span>DevRocket field guide · 02</span>
     <button type="button" data-print><i class="fa fa-print" aria-hidden="true"></i> Print / Save PDF</button>
   </div>
 
@@ -213,10 +211,8 @@ const evidence = [
   html { scroll-padding-top: 78px; background: #05060a; }
   body { margin: 0; background: #05060a; color: #f5f6fb; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
   .guide-shell { width: min(100% - 48px, 1120px); margin: 0 auto; }
-  .guide-controls { position: sticky; top: 0; z-index: 30; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 58px; border-bottom: 1px solid #202437; padding: 10px max(24px, calc((100vw - 1120px) / 2)); background: rgba(5,6,10,.92); color: #a0a5b8; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(16px); }
-  .guide-controls a { display: inline-flex; align-items: center; gap: 8px; width: fit-content; }
-  .guide-controls a:hover { color: #1df9f8; }
-  .guide-controls button { justify-self: end; border: 1px solid #1df9f8; border-radius: 6px; padding: 9px 14px; background: #1df9f8; color: #05060a; font: inherit; cursor: pointer; }
+  .guide-controls { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: flex-end; min-height: 58px; border-bottom: 1px solid #202437; padding: 10px max(24px, calc((100vw - 1120px) / 2)); background: rgba(5,6,10,.92); color: #a0a5b8; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(16px); }
+  .guide-controls button { border: 1px solid #1df9f8; border-radius: 6px; padding: 9px 14px; background: #1df9f8; color: #05060a; font: inherit; cursor: pointer; }
   .guide-controls button:hover { border-color: #fff; background: #fff; }
   .automation-guide { overflow: clip; }
   .guide-hero { position: relative; min-height: 760px; overflow: hidden; border-bottom: 1px solid #202437; background: radial-gradient(circle at 80% 15%, rgba(29,249,248,.14), transparent 25%), linear-gradient(145deg, #05060a, #0d101a); }
@@ -322,8 +318,7 @@ const evidence = [
   }
   @media (max-width: 620px) {
     .guide-shell { width: min(100% - 32px, 1120px); }
-    .guide-controls { grid-template-columns: 1fr auto; padding-inline: 16px; }
-    .guide-controls > span { display: none; }
+    .guide-controls { padding-inline: 16px; }
     .guide-controls button { padding-inline: 11px; font-size: 9px; }
     .guide-hero { min-height: 680px; }
     .guide-brand { padding-bottom: 60px; }
@@ -348,36 +343,76 @@ const evidence = [
     .guide-footer > div > div:last-child { text-align: left; }
   }
   @media print {
-    @page { size: letter portrait; margin: .48in; }
+    @page { size: letter portrait; margin: .4in; }
     :root { color-scheme: light; }
     html, body, .automation-guide { background: #fff !important; color: #10121b !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    html, body { width: auto; min-width: 0; }
     body::before { display: none !important; }
     .guide-controls, .category-nav, .hero-orbit, .guide-grid, .hero-summary a { display: none !important; }
     .guide-shell { width: 100%; }
-    .guide-hero { min-height: auto; border-bottom: 1px solid #cbd1dc; background: #fff !important; color: #10121b !important; }
-    .guide-hero__inner { padding: 34px; }
-    .guide-brand { padding-bottom: 40px; }
+    .guide-hero { box-sizing: border-box; min-height: 0; break-after: auto; border: 1px solid #cbd1dc; background: #fff !important; color: #10121b !important; }
+    .guide-hero__inner { padding: .22in .3in .26in; }
+    .guide-brand { padding-bottom: .22in; }
+    .guide-brand img { width: 145px; }
     .guide-brand img, .guide-footer img { filter: invert(1); }
     .guide-brand span, .guide-kicker, .guide-hero h1 em, .eyebrow, .category-heading > p, .category-heading > b, .automation-card__number, .automation-card__category, .automation-card__aside p, .workflow-block li::before, .evidence-card strong, .launch-steps > li > span { color: #087f83 !important; }
-    .guide-hero h1 { color: #10121b !important; font-size: 52px; }
-    .guide-subtitle { color: #10121b !important; }
-    .hero-summary p { color: #353b4b !important; }
-    .evidence-section, .launch-section, .automation-section { padding: 36px 0; background: #fff !important; }
-    .evidence-grid { grid-template-columns: repeat(3, 1fr); }
-    .evidence-card, .use-note, .automation-card, .launch-steps li { break-inside: avoid; border-color: #cbd1dc; background: #fff !important; color: #10121b !important; }
-    .evidence-card { min-height: 190px; }
+    .guide-hero h1 { color: #10121b !important; font-size: 42px; }
+    .guide-subtitle { margin-top: 20px; color: #10121b !important; font-size: 18px; }
+    .hero-summary { margin-top: 18px; }
+    .hero-summary p { color: #353b4b !important; font-size: 13px; }
+    .evidence-section, .launch-section, .automation-section { padding: .3in 0; background: #fff !important; }
+    .evidence-section { padding-block: .18in; break-after: page; }
+    .section-heading--split { grid-template-columns: 1.15fr .65fr; gap: .3in; }
+    .section-heading h2 { font-size: 31px; }
+    .section-heading > p { font-size: 12px; line-height: 1.45; }
+    .evidence-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+    .evidence-card, .use-note, .automation-card, .launch-steps li { break-inside: avoid-page; page-break-inside: avoid; border-color: #cbd1dc; background: #fff !important; color: #10121b !important; }
+    .evidence-card { min-height: 140px; padding: 16px; }
+    .evidence-card strong { font-size: 40px; }
+    .evidence-card p { margin-top: 10px; font-size: 12px; }
+    .evidence-card span { padding-top: 12px; font-size: 8px; }
+    .use-note { margin-top: 10px; padding: 14px 16px; }
+    .use-note p { font-size: 11px; }
     .evidence-card p, .section-heading > p, .category-heading div > span, .automation-card__description, .workflow-block li, .automation-card__aside span, .launch-steps p, .use-note p { color: #353b4b !important; }
     .evidence-card span, .workflow-block h4, .tool-block h4, .tool-list span, .guide-footer p { color: #5f687a !important; }
     .use-note { background: #f1fbfb !important; }
-    .automation-card { grid-template-columns: 50px 1fr 235px; }
+    .category-heading { grid-template-columns: .7in 1fr auto; gap: 24px; margin-bottom: 24px; break-after: avoid-page; page-break-after: avoid; }
+    .category-heading > b { display: block; }
+    .category-heading h2 { font-size: 36px; }
+    .category-heading div > span { margin-top: 8px; font-size: 13px; }
+    .automation-list { gap: 14px; }
+    .automation-card { grid-template-columns: .42in minmax(0, 1fr) 2.05in; }
+    .automation-card__number { padding-top: 24px; }
+    .automation-card__main { padding: 24px 26px 26px; }
+    .automation-card h3 { font-size: 25px; }
+    .automation-card__description { margin-top: 10px; font-size: 12px; line-height: 1.45; }
+    .workflow-block, .tool-block { margin-top: 18px; }
+    .workflow-block ol { gap: 7px; margin-top: 9px; }
+    .workflow-block li { font-size: 11px; line-height: 1.4; }
+    .tool-list { gap: 6px; margin-top: 9px; }
+    .tool-list a { padding: 6px 8px; font-size: 9px; }
     .automation-card__number, .automation-card__aside, .automation-card__aside > div { border-color: #cbd1dc !important; }
-    .automation-card__aside { border-color: #cbd1dc; background: #f3f5f8 !important; }
+    .automation-card__aside { grid-column: 3; display: flex; grid-template-columns: none; border-top: 0; border-left: 1px solid #cbd1dc; background: #f3f5f8 !important; }
+    .automation-card__aside > div { padding: 20px; }
+    .automation-card__aside span { font-size: 10px; line-height: 1.45; }
+    .resource-link { grid-column: auto; padding: 18px 20px; font-size: 9px; }
     .tool-list a { border-color: #cbd1dc; background: #f3f5f8 !important; }
     .tool-list b, .automation-card h3, .category-heading h2, .section-heading h2, .launch-steps b, .use-note strong { color: #10121b !important; }
     .resource-link, .guide-footer a, .tool-list i, .evidence-card i { color: #087f83 !important; }
     .workflow-block li:not(:last-child)::after { background: #71bfc1 !important; }
     .launch-steps li:not(:last-child)::after { border-color: #087f83; background: #fff !important; }
-    .automation-section { break-before: page; }
-    .guide-footer { border-color: #cbd1dc; padding: 30px 0; background: #fff !important; color: #10121b !important; }
+    .automation-section { break-before: auto; scroll-margin-top: 0; }
+    .launch-steps { grid-template-columns: repeat(5, 1fr); margin-top: 34px; }
+    .launch-steps li { min-height: 170px; border: 1px solid #cbd1dc; border-right: 0; padding: 20px 16px; }
+    .launch-steps li:last-child { border-right: 1px solid #cbd1dc; }
+    .launch-steps li:not(:last-child)::after { top: 34px; right: -8px; bottom: auto; transform: rotate(45deg); }
+    .launch-steps div { margin-top: 38px; }
+    .launch-section { padding-bottom: .1in; }
+    .guide-footer { break-inside: avoid-page; border-color: #cbd1dc; padding: 14px 0; background: #fff !important; color: #10121b !important; }
+    .guide-footer .guide-shell { align-items: center; }
+    .guide-footer img { width: 130px; }
+    .guide-footer p { margin-top: 6px; font-size: 8px; }
+    .guide-footer a { margin-top: 4px; font-size: 11px; }
+    p, li { orphans: 3; widows: 3; }
   }
 </style>
