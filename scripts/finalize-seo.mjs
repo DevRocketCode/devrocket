@@ -29,7 +29,10 @@ function pathnameFor(file) {
   return `/${outputPath}`;
 }
 
-for (const file of await findHtmlFiles(outputDirectory)) {
+const htmlFiles = await findHtmlFiles(outputDirectory);
+const sitemapPaths = [];
+
+for (const file of htmlFiles) {
   let html = await readFile(file, 'utf8');
   const pathname = pathnameFor(file);
   const canonicalUrl = new URL(pathname, siteUrl).toString();
@@ -43,4 +46,19 @@ for (const file of await findHtmlFiles(outputDirectory)) {
   }
 
   await writeFile(file, html);
+
+  const isErrorPage = pathname === '/404.html' || pathname === '/404/';
+  const isNoindex = /<meta\s+[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
+
+  if (!isErrorPage && !isNoindex) {
+    sitemapPaths.push(pathname);
+  }
 }
+
+const sitemapEntries = sitemapPaths
+  .sort((left, right) => left.localeCompare(right))
+  .map((pathname) => `  <url>\n    <loc>${new URL(pathname, siteUrl).toString()}</loc>\n  </url>`)
+  .join('\n');
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`;
+
+await writeFile(join(outputDirectory, 'sitemap.xml'), sitemap);
